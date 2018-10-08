@@ -1,0 +1,54 @@
+/* ==========================================================================
+Global Variables
+========================================================================== */
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700');
+
+/* --- Typography --- */
+$font-serif: Baskerville, serif;
+$font-sans-serif: 'PT Sans', sans-serif;
+
+/* --- Image Path --- */
+
+$image-path: "../../images/";
+
+/* --- Base Colours Black/White --- */
+
+$color-white: #ffffff;
+$color-black: #000000;
+
+/* --- Background Colours --- */
+
+$bg-color-a: #321C38;
+$bg-color-b: #2C2D31;
+$bg-color-c: #F9BFFF;
+$bg-color-d: #8D5FE4;
+$bg-color-e: #EFF3F7;
+
+/* --- Text Colours --- */
+
+$text-color-a: #FFFFFF;
+$text-color-b: #9B9EAB;
+$text-color-c: #8F6F9D;
+$text-color-d: #5932B1;
+$text-color-e: #F9BFFF;
+$text-color-f: #D770AD;
+$text-color-g: #DECC8D;
+
+/* --- Link Colours --- */
+
+$link-primary: #000000;
+$link-primary-hover: #aaaaaa;
+
+/* --- Rounded corners --- */
+
+$round-corners: 3px;
+
+/* --- Animations --- */
+
+$base-duration: 300ms;
+$link-animation: color $base-duration ease-in-out;
+
+/* --- Grid panel sizing --- */
+
+$grid-panel-padding: 2.1vw;
+$grid-panel-padding-xl: 1.1vw;

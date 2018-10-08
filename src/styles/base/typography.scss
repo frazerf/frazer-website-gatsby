@@ -1,0 +1,72 @@
+.h1 {
+  font-size: 23px;
+  line-height: 19px;
+  font-weight: 600;
+  margin: 0;
+  @media #{$breakpoint-md-up} {
+    font-size: 30px;
+    line-height: 27px;
+  }
+  @media #{$breakpoint-lg-up} {
+    font-size: 60px;
+    line-height: 66px;
+  }
+}
+
+.h2 {
+  margin: 0;
+}
+
+.h3 {
+  margin: 0;
+}
+
+.p {
+  font-size: 23px;
+  line-height: 19px;
+  margin: 0;
+  @media #{$breakpoint-md-up} {
+    font-size: 30px;
+    line-height: 27px;
+  }
+  @media #{$breakpoint-lg-up} {
+    font-size: 20px;
+    line-height: 30px;
+  }
+}
+
+h1 {
+  @extend .h1;
+}
+
+h2 {
+  @extend .h2;
+}
+
+h3 {
+  @extend .h3;
+}
+
+p {
+  @extend .p;
+}
+
+ul, ol {
+  li {
+    @extend .p;
+  }
+}
+
+h1, h2, h3, h4, h5, h6, p, ul li, ol li {
+  a {
+    transition: $link-animation;
+    color: $link-primary;
+    &:hover {
+      color: $link-primary-hover;
+    }
+  }
+
+  .text-light & {
+    color: $color-white;
+  }
+}

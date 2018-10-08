@@ -1,0 +1,50 @@
+.hero-slider {
+    position: relative;
+    height: 100vh;
+    overflow-x: hidden;
+    color: white;
+    &__main {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        div {
+            height: 100%;
+            .hero-slider__main_holder {
+                background-color: black;
+                background-size: cover;
+                background-position: 50%;
+                .hero-slider__main_content {
+                    padding: 0 80px;
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: column;
+                    width: 50%;
+                }
+            }
+        }
+    }
+    &__nav {
+        background: transparent;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 0 80px;
+        &__content {
+            padding: 20px;
+        }
+        .slick-track {
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            .slick-slide {
+                border-top: 4px rgba($color: #ffffff, $alpha: 0.0) solid;
+                transition: 300ms border-top ease-out;
+                div {
+                    outline: 0;
+                }
+                &.slick-current {
+                    border-top: 4px white solid;
+                }
+            }
+        }
+    }
+}
