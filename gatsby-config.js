@@ -1,9 +1,19 @@
+const path = require(`path`)
+
 module.exports = {
   siteMetadata: {
     title: 'Gatsby Default Starter',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    {
+      resolve: 'gatsby-source-contentful',
+      options: {
+        spaceId: 'rb9oib50hgcl',
+        accessToken: 'e1dfdea49375f5a6761cde63bea4fd73e24007e79203346c5219e473e8396abb'
+      }
+    },
+    'gatsby-transformer-remark',
     'gatsby-plugin-sass',
     {
       resolve: `gatsby-plugin-manifest`,
@@ -18,5 +28,22 @@ module.exports = {
       },
     },
     'gatsby-plugin-offline',
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: path.join(__dirname, `src`, `images`),
+      },
+    },
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+          rule: {
+            include: '/src/\images/'
+          }
+      }
+    },
   ],
 }

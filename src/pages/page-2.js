@@ -19,37 +19,62 @@ export default class AsNavFor extends React.Component {
   }
 
   render() {
+
+    var heroSliderMainSettings = {
+      fade:true,
+      autoplay:true,
+      autoplaySpeed:5000,
+      pauseOnHover:true,
+      speed:1000
+    }
+
     return (
-      <div>
+      <div className="animated fadeIn">
         <div className="hero-slider">
           <Slider
             className={'hero-slider__main'}
             asNavFor={this.state.nav2}
             ref={slider => (this.slider1 = slider)}
-            fade={true}
-            autoplay={true}
-            autoplaySpeed={5000}
-            pauseOnHover={true}
+            {...heroSliderMainSettings}
           >
             <div className="hero-slider__main_holder">
+              <div className="hero-slider__main_image"></div>
               <div className="hero-slider__main_content">
-                <h1>Staying overnight in Tunisia's favourite hotels</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <h5 className="t-uppercase">Featured Article</h5>
+                <h1>Uzbekistan's electronic music festival in a vanished sea</h1>
+                <div className="hero-slider__main_content_link">
+                  <h5 className="t-uppercase">Read more</h5>
+                </div>
               </div>
             </div>
             <div className="hero-slider__main_holder">
+              <div className="hero-slider__main_image"></div>
               <div className="hero-slider__main_content">
-                <h1>Title 2</h1>
+                <h5 className="t-uppercase">Featured Article</h5>
+                <h1>Fantastic beasts and where to find them</h1>
+                <div className="hero-slider__main_content_link">
+                  <h5 className="t-uppercase">Read more</h5>
+                </div>
               </div>
             </div>
             <div className="hero-slider__main_holder">
+              <div className="hero-slider__main_image"></div>
               <div className="hero-slider__main_content">
-                <h1>Title 3</h1>
+                <h5 className="t-uppercase">Featured Article</h5>
+                <h1>Discover and book tours and activities</h1>
+                <div className="hero-slider__main_content_link">
+                  <h5 className="t-uppercase">Read more</h5>
+                </div>
               </div>
             </div>
             <div className="hero-slider__main_holder">
+              <div className="hero-slider__main_image"></div>
               <div className="hero-slider__main_content">
-                <h1>Title 4</h1>
+                <h5 className="t-uppercase">Featured Article</h5>
+                <h1>Europe's 10 best night trains</h1>
+                <div className="hero-slider__main_content_link">
+                  <h5 className="t-uppercase">Read more</h5>
+                </div>
               </div>
             </div>
           </Slider>
@@ -62,23 +87,31 @@ export default class AsNavFor extends React.Component {
             focusOnSelect={true}
           >
             <div className="hero-slider__nav__content">
-              <h3>This is some content 1</h3>
-              <p>This is a paragraph 1</p>
+              <h5>Uzbekistan's electronic music festival in a vanished sea</h5>
             </div>
             <div className="hero-slider__nav__content">
-            <h3>This is some content 2</h3>
-              <p>This is a paragraph 2</p>
+              <h5>Fantastic beasts and where to find them</h5>
             </div>
             <div className="hero-slider__nav__content">
-            <h3>This is some content 3</h3>
-              <p>This is a paragraph 3</p>
+              <h5>Discover and book tours and activities</h5>
             </div>
             <div className="hero-slider__nav__content">
-            <h3>This is some content 4</h3>
-              <p>This is a paragraph 4</p>
+              <h5>Europe's 10 best night trains</h5>
             </div>
           </Slider>
+          <div className="gradient"></div>
         </div>
+        <p>sdsdd sdd</p>
+        <p>sdsdd sdd</p>
+        <p>sdsdd sdd</p>
+        <p>sdsdd sdd</p>
+        <p>sdsdd sdd</p>
+        <p>sdsdd sdd</p>
+        <p>sdsdd sdd</p>
+        <p>sdsdd sdd</p>
+        <p>sdsdd sdd</p>
+        <p>sdsdd sdd</p>
+        <p>sdsdd sdd</p>
       </div>
     );
   }

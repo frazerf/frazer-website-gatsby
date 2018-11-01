@@ -1,0 +1,21 @@
+.blog {
+    &__hero {
+        .image {
+            margin-bottom: 50px;
+        }
+    }
+    &__sidebar {
+        position: sticky;
+        top: 20px;
+        
+        .social-shares {
+            display: flex;
+            .social--icons {
+                margin-right: 7px;
+                &:nth-last-child(1) {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}

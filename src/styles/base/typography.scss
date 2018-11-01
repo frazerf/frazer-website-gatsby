@@ -8,8 +8,9 @@
     line-height: 27px;
   }
   @media #{$breakpoint-lg-up} {
-    font-size: 60px;
-    line-height: 66px;
+    font-size: 66px;
+    line-height: 69px;
+    margin: 0 0 50px 0;
   }
 }
 
@@ -18,20 +19,52 @@
 }
 
 .h3 {
+  font-size: 25px;
+  line-height: 34px;
+  font-weight: 600;
+  margin: 0;
+  @media #{$breakpoint-md-up} {
+    font-size: 25px;
+    line-height: 34px;
+  }
+  @media #{$breakpoint-lg-up} {
+    font-size: 25px;
+    line-height: 34px;
+    margin: 0 0 10px 0;
+  }
+}
+
+.h5 {
+  font-size: 12px;
+  line-height: 18px;
+  margin: 0 0 15px 0;
+  @media #{$breakpoint-md-up} {
+    font-size: 12px;
+    line-height: 18px;
+    margin: 0 0 15px 0;
+  }
+  @media #{$breakpoint-lg-up} {
+    font-size: 12px;
+    line-height: 18px;
+    margin: 0 0 15px 0;
+  }
+}
+
+.h6 {
   margin: 0;
 }
 
 .p {
-  font-size: 23px;
-  line-height: 19px;
+  font-size: 16px;
+  line-height: 27px;
   margin: 0;
   @media #{$breakpoint-md-up} {
-    font-size: 30px;
+    font-size: 16px;
     line-height: 27px;
   }
   @media #{$breakpoint-lg-up} {
-    font-size: 20px;
-    line-height: 30px;
+    font-size: 18px;
+    line-height: 27px;
   }
 }
 
@@ -47,8 +80,21 @@ h3 {
   @extend .h3;
 }
 
+h5 {
+  @extend .h5;
+}
+
+h6 {
+  @extend .h6;
+}
+
 p {
   @extend .p;
+  &.leadin {
+    font-size: 24px;
+    margin-bottom: 35px;
+    line-height: 37px;
+  }
 }
 
 ul, ol {
@@ -69,4 +115,12 @@ h1, h2, h3, h4, h5, h6, p, ul li, ol li {
   .text-light & {
     color: $color-white;
   }
+}
+
+.t-uppercase {
+  text-transform: uppercase; 
+}
+
+.t-italic {
+  font-style: italic;
 }

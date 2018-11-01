@@ -1,0 +1,20 @@
+.hero {
+    &__standard {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 300px;
+        border-bottom: 1px solid $border-secondary;
+        text-align: center;
+        h1 {
+            margin-bottom: 30px;
+        }
+        h5 {
+            color: $font-secondary-color;
+        }
+        p {
+            margin-bottom: 0;
+        }
+    }
+}

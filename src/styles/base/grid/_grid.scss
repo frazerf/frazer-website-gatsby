@@ -4,7 +4,13 @@
 
 .row {
   @include row();
-  width: calc(100% - #{$gutter * 2});
+  width: calc(100% - #{$outside-margin-sm * 2});
+  @media #{$breakpoint-sm-up} {
+    width: calc(100% - #{$outside-margin-md * 2});
+  }
+  @media #{$breakpoint-md-up} {
+    width: calc(100% - #{$outside-margin-lg * 2});
+  }
 }
 
 .row.reverse {
