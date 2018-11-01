@@ -33,13 +33,17 @@
                     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
                 }
                 .hero-slider__main_content {
-                    padding: 0 80px;
+                    padding: 0 20px;
                     display: flex;
                     justify-content: center;
                     flex-direction: column;
-                    width: 70%;
+                    width: 100%;
                     z-index: 1;
                     position: relative;
+                    @media #{$breakpoint-md-up} {
+                        padding: 0 80px;
+                        width: 70%;
+                    }
                     a {
                         color: #ffffff;
                         text-decoration: none;
@@ -53,6 +57,10 @@
                         height: initial;
                         width: 150px;
                         padding-top: 30px;
+                        margin-top: 15px;
+                        @media #{$breakpoint-md-up} {
+                            margin-top: 0;
+                        }
                     }
                 }
                 .hero-slider__main_image {
@@ -66,6 +74,15 @@
                 }
             }
         }
+        .slick-dots {
+            bottom: 30px;
+            @media #{$breakpoint-md-up} {
+                display: none !important;
+            }
+            li button:before {
+                font-size: 16px;
+            }
+        }
     }
     &__nav {
         background: transparent;
@@ -77,6 +94,9 @@
         counter-reset: my-sec-counter;
         display: flex;
         align-items: center;
+        @media #{$breakpoint-sm-down} {
+            display: none;
+        }
         &__content {
             padding: 0 46px;
             display: inline-flex !important;

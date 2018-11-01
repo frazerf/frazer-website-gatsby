@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-// import Logo from '.,/images/logo.png' // relative path to image
-import CartIcon from '../images/logo.png';
+// import CartIcon from '../images/logo.png';
 
 const Header = ({ siteTitle }) => (
   <div>
@@ -9,8 +8,7 @@ const Header = ({ siteTitle }) => (
       <div className="row middle-xs header">
         <div className="col-xs-4">
           <div className="logo">
-            {/* <Logo/> */}
-            <img alt="sd" src={CartIcon}/>
+            {/* <img alt="sd" src={CartIcon}/> */}
           </div>
         </div>
         <div className="col-xs-8">

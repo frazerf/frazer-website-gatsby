@@ -49,7 +49,9 @@ export default class AsNavFor extends React.Component {
       autoplay:true,
       autoplaySpeed:5000,
       pauseOnHover:true,
-      speed:1000
+      speed:1000,
+      dots: true,
+      arrows: false
     }
 
     return (
