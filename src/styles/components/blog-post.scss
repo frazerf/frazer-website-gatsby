@@ -18,4 +18,11 @@
             }
         }
     }
+    &-post__content {
+        p {
+            &:first-child {
+                @extend .leadin;
+            }
+        }
+    }
 }

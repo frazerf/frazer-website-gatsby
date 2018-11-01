@@ -39,7 +39,7 @@ class BlogPost extends Component {
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col-xs-2">
+                        <div className="col-xs-12 col-md-2">
                             <div className="blog__sidebar">
                                 <h5 className="t-uppercase">Tags: {createdAt}</h5>
                                 <div className="social-shares">
@@ -55,7 +55,7 @@ class BlogPost extends Component {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-xs-8">
+                        <div className="col-xs-12 col-md-8 blog-post__content">
                             <div dangerouslySetInnerHTML={{__html: leadin.childMarkdownRemark.html}} />
                         </div>
                     </div>

@@ -64,6 +64,20 @@
   }
   @media #{$breakpoint-lg-up} {
     font-size: 18px;
+    line-height: 32px;
+  }
+}
+
+.leadin {
+  font-size: 16px;
+  line-height: 27px;
+  margin: 0;
+  @media #{$breakpoint-md-up} {
+    font-size: 16px;
+    line-height: 27px;
+  }
+  @media #{$breakpoint-lg-up} {
+    font-size: 25px;
     line-height: 27px;
   }
 }

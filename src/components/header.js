@@ -1,15 +1,12 @@
 import React from 'react'
 import { Link } from 'gatsby'
-// import CartIcon from '../images/logo.png';
 
 const Header = ({ siteTitle }) => (
   <div>
     <header>
       <div className="row middle-xs header">
         <div className="col-xs-4">
-          <div className="logo">
-            {/* <img alt="sd" src={CartIcon}/> */}
-          </div>
+        <div className="logo"><Link to={`/`}>f<span>f</span>.</Link></div>
         </div>
         <div className="col-xs-8">
           <ul className="nav--primary">

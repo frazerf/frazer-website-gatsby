@@ -14,10 +14,18 @@ header {
             }
         }
         .logo {
-            width: 200px;
-            img {
-                width: 100%;
-                display: block;
+            a {
+                text-decoration: none;
+                color: black;
+                .home & {
+                    color: white;
+                }
+            }
+            font-family: times;
+            font-size: 41px;
+            letter-spacing: -1px;
+            span {
+                font-style: italic;
             }
         }
     }
