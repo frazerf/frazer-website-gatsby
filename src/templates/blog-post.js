@@ -14,6 +14,7 @@ import {
 
 class BlogPost extends Component {
     render() {
+        const url = window.location.href;
         const {
             title,
             leadin,
@@ -43,13 +44,13 @@ class BlogPost extends Component {
                             <div className="blog__sidebar">
                                 <h5 className="t-uppercase">Tags: {createdAt}</h5>
                                 <div className="social-shares">
-                                    <FacebookShareButton url={slug} quote={title} className="social--icons">
+                                    <FacebookShareButton url={'https://heuristic-shannon-7c842a.netlify.com/blog/' } quote={title} className="social--icons">
                                         <FacebookIcon size={40} round />
                                     </FacebookShareButton>
-                                    <TwitterShareButton url={slug} title={title} className="social--icons">
+                                    <TwitterShareButton url={'https://heuristic-shannon-7c842a.netlify.com/blog/' + slug} title={title} className="social--icons">
                                         <TwitterIcon size={40} round />
                                     </TwitterShareButton>
-                                    <EmailShareButton url={slug} subject={title} className="social--icons">
+                                    <EmailShareButton url={'https://heuristic-shannon-7c842a.netlify.com/blog/' + slug} subject={title} className="social--icons">
                                         <EmailIcon size={40} round />
                                     </EmailShareButton>
                                 </div>
