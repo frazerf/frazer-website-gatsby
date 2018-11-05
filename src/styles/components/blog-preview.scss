@@ -3,9 +3,13 @@
     color: $font-primary-color;
     text-decoration: none;
     transition: $link-animation;
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 30px;
+    padding-bottom: 30px;
     border-bottom: 1px solid $border-secondary;
+    @media #{$breakpoint-md-up} {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
     &:hover {
         color: grey;
     }

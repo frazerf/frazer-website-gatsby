@@ -4,17 +4,29 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        height: 300px;
         border-bottom: 1px solid $border-secondary;
         text-align: center;
+        padding: 25px 0;
+        @media #{$breakpoint-md-up} {
+            height: 300px;
+        }
         h1 {
-            margin-bottom: 30px;
+            margin-bottom: 14px;
+            @media #{$breakpoint-md-up} {
+                margin-bottom: 30px;
+            }
         }
         h5 {
             color: $font-secondary-color;
         }
         p {
             margin-bottom: 0;
+        }
+        .leadin {
+            @media #{$breakpoint-sm-down} {
+                font-size: 16px;
+                line-height: 24px;
+            }
         }
     }
 }
