@@ -14,7 +14,6 @@ import {
 
 class BlogPost extends Component {
     render() {
-        const url = window.location.href;
         const {
             title,
             leadin,
