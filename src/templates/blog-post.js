@@ -70,6 +70,7 @@ BlogPost.proptypes = {
     data: Proptypes.object.isRequired
 }
 
+
 export default BlogPost;
 
 export const pageQuery = graphql`
