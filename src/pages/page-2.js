@@ -22,10 +22,15 @@ export default class AsNavFor extends React.Component {
 
     var heroSliderMainSettings = {
       fade:true,
-      autoplay:true,
-      autoplaySpeed:5000,
       pauseOnHover:true,
-      speed:1000
+      speed:1000,
+      autoPlay: false
+    }
+
+    var heroSliderNavSettings = {
+      slidesToShow: 4,
+      swipeToSlide: true,
+      focusOnSelect: true
     }
 
     return (
@@ -82,9 +87,7 @@ export default class AsNavFor extends React.Component {
             className={'hero-slider__nav'}
             asNavFor={this.state.nav1}
             ref={slider => (this.slider2 = slider)}
-            slidesToShow={4}
-            swipeToSlide={true}
-            focusOnSelect={true}
+            {...heroSliderNavSettings}
           >
             <div className="hero-slider__nav__content">
               <h5>Uzbekistan's electronic music festival in a vanished sea</h5>

@@ -54,6 +54,12 @@ export default class AsNavFor extends React.Component {
       arrows: false
     }
 
+    var heroSliderNavSettings = {
+      slidesToShow: 4,
+      swipeToSlide: true,
+      focusOnSelect: true
+    }
+
     return (
       <div className="animated fadeIn">
         <Helmet>
@@ -90,9 +96,7 @@ export default class AsNavFor extends React.Component {
             className={'hero-slider__nav'}
             asNavFor={this.state.nav1}
             ref={slider => (this.slider2 = slider)}
-            slidesToShow={4}
-            swipeToSlide={true}
-            focusOnSelect={true}
+            {...heroSliderNavSettings}
           >
           {blogItem.map(({ node }) => {
             return (
