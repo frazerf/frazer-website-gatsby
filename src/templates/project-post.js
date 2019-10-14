@@ -2,7 +2,6 @@ import React, { Component} from 'react';
 import { graphql } from 'gatsby'
 import Proptypes from 'prop-types';
 import Img from 'gatsby-image'
-import Layout from '../components/layout'
 import ContentModules from '../content-modules'
 
 class ProjectPost extends Component {
@@ -15,8 +14,7 @@ class ProjectPost extends Component {
             blocks,
         } = this.props.data.contentfulProject
         return (
-            <>
-              <Layout>
+          <div className="main-content">
                 <div className="hero animated fadeInUp">
                   <div className="hero-content">
                     <div className="container">
@@ -33,8 +31,7 @@ class ProjectPost extends Component {
                   </div>
                 </div>
                 {blocks && <ContentModules blocks={blocks} />}
-            </Layout>
-            </>
+            </div>
         )
     }
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 // import Img from 'gatsby-image'
 import Helmet from 'react-helmet'
-import Layout from '../components/layout'
+
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 
@@ -13,11 +13,7 @@ export default class Index extends React.Component {
     const projectItem = this.props.data.allContentfulProject.edges;
 
     return (
-      <div>
-        <Helmet>
-          <body className="home" />
-        </Helmet>
-        <Layout>
+      <div className="main-content">
           <div className="container spacer--top">
             <div className="row justify-content-md-center">
               <nav className="col-11">
@@ -26,12 +22,12 @@ export default class Index extends React.Component {
                   {blogItem.map(({ node, i }) => {
                     return (
                       <li key={node.id}>
-                        <AniLink cover bg="#eeeeee" duration={1.7} to={`/blog/${node.slug}/`}>{node.title}</AniLink>
+                        <AniLink direction="left" cover bg="#eeeeee" duration={1.7} to={`/blog/${node.slug}/`}>{node.title}</AniLink>
                       </li>
                     )}
                   )}
                   <li>
-                    <AniLink cover bg="#eeeeee" duration={1.7} to={`/blog/`}>+ more...</AniLink>
+                    <AniLink direction="left" cover bg="#eeeeee" duration={1.7} to={`/blog/`}>+ more...</AniLink>
                   </li>
                 </ul>
                 <ul className="nav-list">
@@ -39,18 +35,17 @@ export default class Index extends React.Component {
                   {projectItem.map(({ node, i }) => {
                     return (
                       <li key={node.id}>
-                        <AniLink direction="right" cover to={`/project/${node.slug}/`}>{node.title}</AniLink>
+                        <AniLink direction="left" cover bg="#eeeeee" duration={1.7} direction="right" cover to={`/project/${node.slug}/`}>{node.title}</AniLink>
                       </li>
                     )}
                   )}
                   <li>
-                    <AniLink direction="right" cover to={`/project/`}>+ more...</AniLink>
+                    <AniLink direction="left" cover bg="#eeeeee" duration={1.7} direction="right" cover to={`/project/`}>+ more...</AniLink>
                   </li>
                 </ul>
               </nav>
             </div>
           </div>
-        </Layout>
       </div>
     );
   }

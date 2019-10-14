@@ -16,9 +16,10 @@ class Sidebar extends React.Component {
       
         <div className="sidebar-container">
           <AniLink className="logo" cover bg="#eeeeee" direction="right" duration={1.7} to={`/`}>f.</AniLink>
-          <div className="slogan">
+          
+          <div><div className="slogan">
             <span>friends</span>
-          </div>
+          </div></div>
           <ul>
             {data.map((item, i) =>
               <li key={item.id}>
@@ -26,9 +27,9 @@ class Sidebar extends React.Component {
               </li>
             )}
           </ul>
-          <div className="socials">
+          <span className="socials">
             +
-          </div>
+          </span>
         </div>
 
       </div>

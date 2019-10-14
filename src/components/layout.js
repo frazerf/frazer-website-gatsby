@@ -4,7 +4,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
-import { TransitionPortal } from "gatsby-plugin-transition-link";
 
 import Sidebar from './sidebar'
 
@@ -38,12 +37,10 @@ const Layout = ({ children }) => (
           <html lang="en" />
         </Helmet>
         <div className="outer-container">
-          <TransitionPortal level="top">
-            <Sidebar nav={data} siteTitle={data.site.siteMetadata.title} />
-          </TransitionPortal>
-          <div className="main-content">
+          <Sidebar nav={data} />
+          
             {children}
-          </div>
+       
         </div>
       </>
     )}

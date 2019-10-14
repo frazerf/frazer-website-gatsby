@@ -1,6 +1,5 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Layout from '../components/layout'
 import BlogPreview from '../components/blog-preview'
 
 class BlogIndex extends React.Component {
@@ -9,23 +8,23 @@ class BlogIndex extends React.Component {
 
     return (
       <>
-        <Layout>
-          <div className="container spacer--top">
-            <div className="row justify-content-md-center">
-              <nav className="col-11">
-                <ul className="nav-list">
-                {posts.map(({ node }) => {
-                  return (
-                  <li key={node.slug}>
-                    <BlogPreview blog={node}></BlogPreview>
-                  </li>
-                  )
-                })}
-                </ul>
-              </nav>
-            </div>
+      <div className="main-content">
+        <div className="container spacer--top">
+          <div className="row justify-content-md-center">
+            <nav className="col-11">
+              <ul className="nav-list">
+              {posts.map(({ node }) => {
+                return (
+                <li key={node.slug}>
+                  <BlogPreview blog={node}></BlogPreview>
+                </li>
+                )
+              })}
+              </ul>
+            </nav>
           </div>
-        </Layout>
+        </div>
+        </div>
       </>
     )
   }

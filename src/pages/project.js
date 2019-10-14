@@ -1,6 +1,5 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Layout from '../components/layout'
 import ProjectPreview from '../components/project-preview'
 
 class ProjectIndex extends React.Component {
@@ -8,25 +7,23 @@ class ProjectIndex extends React.Component {
     const posts = this.props.data.allContentfulProject.edges;
 
     return (
-      <>
-        <Layout>
-          <div className="container spacer--top">
+        <div className="main-content">
+        <div className="container spacer--top">
             <div className="row justify-content-md-center">
-              <nav className="col-11">
+                <nav className="col-11">
                 <ul className="nav-list">
                 {posts.map(({ node }) => {
-                  return (
-                  <li key={node.slug}>
+                    return (
+                    <li key={node.slug}>
                     <ProjectPreview project={node}></ProjectPreview>
-                  </li>
-                  )
+                    </li>
+                    )
                 })}
                 </ul>
-              </nav>
+                </nav>
             </div>
-          </div>
-        </Layout>
-      </>
+        </div>
+      </div>
     )
   }
 }

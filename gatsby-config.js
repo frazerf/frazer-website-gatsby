@@ -14,7 +14,12 @@ module.exports = {
       }
     },
     'gatsby-transformer-remark',
-    `gatsby-plugin-transition-link`,
+    {
+      resolve: "gatsby-plugin-transition-link",
+      options: {
+          layout: require.resolve(`./src/components/layout.js`)
+        }
+   },
     'gatsby-plugin-sass',
     {
       resolve: `gatsby-plugin-manifest`,
