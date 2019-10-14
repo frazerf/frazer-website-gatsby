@@ -38,9 +38,9 @@ const Layout = ({ children }) => (
           <html lang="en" />
         </Helmet>
         <div className="outer-container">
-          {/* <TransitionPortal level="top"> */}
+          <TransitionPortal level="top">
             <Sidebar nav={data} siteTitle={data.site.siteMetadata.title} />
-          {/* </TransitionPortal> */}
+          </TransitionPortal>
           <div className="main-content">
             {children}
           </div>
