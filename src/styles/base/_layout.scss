@@ -1,0 +1,67 @@
+.container {
+    max-width: 96%;
+}
+
+.spacer {
+    padding-top: 75px;
+    padding-bottom: 75px;
+    &.no-top {
+        padding-top: 0;
+    }
+    &.no-bottom {
+        padding-bottom: 0;
+    }
+    &.no-padding {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}
+
+.outer-container {
+    background: white;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 180px;
+    position: fixed;
+    height: 100vh;
+    border-right: 1px solid #ddd;
+    background: white;
+}
+
+.main-content {
+    width: 100%;
+    padding-left: 180px;
+}
+
+.spacer {
+    &--top {
+        padding-top: 120px;
+    }
+}
+
+.logo {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+    letter-spacing: 0px;
+    display: block;
+    color: black;
+    &:hover {
+        color: green;
+        text-decoration: none;
+    }
+}
+
+.slogan {
+    transform: rotate(-90deg);
+    font-size: 13px;
+    span {
+        border-bottom: 1px solid black;
+        color: black;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}

@@ -1,10 +1,12 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './../styles/global.scss'
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
+import { TransitionPortal } from "gatsby-plugin-transition-link";
 
-import Header from './header'
+import Sidebar from './sidebar'
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -13,6 +15,13 @@ const Layout = ({ children }) => (
         site {
           siteMetadata {
             title
+          }
+        }
+        contentfulNavigation {
+          navigationItems {
+            id
+            navigationTitle
+            navigationLink
           }
         }
       }
@@ -28,9 +37,13 @@ const Layout = ({ children }) => (
         >
           <html lang="en" />
         </Helmet>
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <div>
-          {children}
+        <div className="outer-container">
+          {/* <TransitionPortal level="top"> */}
+            <Sidebar nav={data} siteTitle={data.site.siteMetadata.title} />
+          {/* </TransitionPortal> */}
+          <div className="main-content">
+            {children}
+          </div>
         </div>
       </>
     )}

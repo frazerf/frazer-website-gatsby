@@ -1,0 +1,26 @@
+nav {
+  .nav-list {
+    margin: 0 0 120px 0;
+    padding: 0;
+    list-style: none;
+    li {
+      a {
+        color: black;
+        @extend .h3;
+        display: inline-block;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .main-nav {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li {
+
+    }
+  }
+}

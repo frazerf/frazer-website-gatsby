@@ -5,7 +5,7 @@ import Img from 'gatsby-image'
 import Layout from '../components/layout'
 import ContentModules from '../content-modules'
 
-class BlogPost extends Component {
+class ProjectPost extends Component {
 
     render() {
         const {
@@ -13,7 +13,7 @@ class BlogPost extends Component {
             createdAt,
             heroImage,
             blocks,
-        } = this.props.data.contentfulBlog
+        } = this.props.data.contentfulProject
         return (
             <>
               <Layout>
@@ -39,16 +39,16 @@ class BlogPost extends Component {
     }
 }
 
-BlogPost.proptypes = {
+ProjectPost.proptypes = {
     data: Proptypes.object.isRequired
 }
 
 
-export default BlogPost;
+export default ProjectPost;
 
 export const pageQuery = graphql`
-  query blogPostQuery($slug: String!) {
-    contentfulBlog(slug: {eq: $slug}) {
+  query projectPostQuery($slug: String!) {
+    contentfulProject(slug: {eq: $slug}) {
       id
       title
       slug

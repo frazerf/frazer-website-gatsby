@@ -1,11 +1,11 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
-import BlogPreview from '../components/blog-preview'
+import ProjectPreview from '../components/project-preview'
 
-class BlogIndex extends React.Component {
+class ProjectIndex extends React.Component {
   render() {
-    const posts = this.props.data.allContentfulBlog.edges;
+    const posts = this.props.data.allContentfulProject.edges;
 
     return (
       <>
@@ -17,7 +17,7 @@ class BlogIndex extends React.Component {
                 {posts.map(({ node }) => {
                   return (
                   <li key={node.slug}>
-                    <BlogPreview blog={node}></BlogPreview>
+                    <ProjectPreview project={node}></ProjectPreview>
                   </li>
                   )
                 })}
@@ -31,11 +31,11 @@ class BlogIndex extends React.Component {
   }
 }
 
-export default BlogIndex
+export default ProjectIndex
 
 export const pageQuery = graphql`
-  query BlogIndexQuery {
-    allContentfulBlog(sort: { fields: [createdAt], order: DESC }) {
+  query ProjectIndexQuery {
+    allContentfulProject(sort: { fields: [createdAt], order: DESC }) {
       edges {
         node {
             title

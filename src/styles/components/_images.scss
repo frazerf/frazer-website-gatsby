@@ -1,0 +1,31 @@
+.image-block {
+    img {
+        height: 40vw;
+        object-fit: cover;
+        width: 100%;
+    }
+}
+
+.image-caption {
+    margin: 15px 0 0 0;
+    h5 {
+        color: grey;
+    }
+}
+
+.col-image {
+    display: flex;
+    .image-block {
+        margin: 20px 10px;
+        width: 100%;
+        .gatsby-image-wrapper {
+            height: 100%;
+        }
+        &:nth-last-child(1) {
+            margin-right: 0;
+        }
+        &:nth-of-type(1) {
+            margin-left: 0;
+        }
+    }
+}

@@ -2,7 +2,7 @@ const path = require(`path`)
 
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Default Starter',
+    title: '🌴 Woop!',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -14,6 +14,7 @@ module.exports = {
       }
     },
     'gatsby-transformer-remark',
+    `gatsby-plugin-transition-link`,
     'gatsby-plugin-sass',
     {
       resolve: `gatsby-plugin-manifest`,
@@ -41,7 +42,7 @@ module.exports = {
       resolve: 'gatsby-plugin-react-svg',
       options: {
           rule: {
-            include: '/src/\images/'
+            include: '/src/images\/.*\.svg/'
           }
       }
     },
