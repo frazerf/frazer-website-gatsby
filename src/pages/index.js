@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 // import Img from 'gatsby-image'
-import Helmet from 'react-helmet'
+// import Helmet from 'react-helmet'
 
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 
@@ -35,12 +35,12 @@ export default class Index extends React.Component {
                   {projectItem.map(({ node, i }) => {
                     return (
                       <li key={node.id}>
-                        <AniLink direction="left" cover bg="#eeeeee" duration={1.7} direction="right" cover to={`/project/${node.slug}/`}>{node.title}</AniLink>
+                        <AniLink direction="left" cover bg="#eeeeee" duration={1.7} to={`/project/${node.slug}/`}>{node.title}</AniLink>
                       </li>
                     )}
                   )}
                   <li>
-                    <AniLink direction="left" cover bg="#eeeeee" duration={1.7} direction="right" cover to={`/project/`}>+ more...</AniLink>
+                    <AniLink direction="left" cover bg="#eeeeee" duration={1.7} to={`/project/`}>+ more...</AniLink>
                   </li>
                 </ul>
               </nav>

@@ -1,8 +1,10 @@
 import React from 'react'
 import Img from 'gatsby-image'
+import Fade from 'react-reveal/Fade';
 
 export default function BlockImage({image, caption, imageSize}) {
   return (
+    <Fade bottom duration={3000}>
     <div className="spacer">
       <div className="container">
         <div className="row">
@@ -25,5 +27,6 @@ export default function BlockImage({image, caption, imageSize}) {
         </div>
       }
     </div>
+    </Fade>
   );
 }
