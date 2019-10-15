@@ -45,11 +45,12 @@ class Sidebar extends React.Component {
         <ul>
           {data.map((item, i) =>
             <li key={item.id}>
-              <AniLink onClick={() => this.closeMenu()} cover bg="#eeeeee" direction="right" duration={1.7} to={item.navigationLink}>{item.navigationTitle}</AniLink>
+              <AniLink onClick={() => this.closeMenu()} fade to={item.navigationLink}>{item.navigationTitle}</AniLink>
             </li>
           )}
         </ul>
       </Menu>
+      <AniLink className="logo mobile-logo" cover bg="#eeeeee" direction="right" duration={1.7} to={`/`}>f.</AniLink>
       <div className="sidebar">
         <div className="sidebar-container">
           <AniLink className="logo" cover bg="#eeeeee" direction="right" duration={1.7} to={`/`}>f.</AniLink>

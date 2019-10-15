@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 // import Img from 'gatsby-image'
 // import Helmet from 'react-helmet'
+import Fade from 'react-reveal/Fade';
 
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 
@@ -30,6 +31,7 @@ export default class Index extends React.Component {
                     <AniLink direction="left" cover bg="#eeeeee" duration={1.7} to={`/blog/`}>+ more...</AniLink>
                   </li>
                 </ul>
+                <Fade bottom>
                 <ul className="nav-list">
                   <li><h6>Projects</h6></li>
                   {projectItem.map(({ node, i }) => {
@@ -43,6 +45,7 @@ export default class Index extends React.Component {
                     <AniLink direction="left" cover bg="#eeeeee" duration={1.7} to={`/project/`}>+ more...</AniLink>
                   </li>
                 </ul>
+                </Fade>
               </nav>
             </div>
           </div>

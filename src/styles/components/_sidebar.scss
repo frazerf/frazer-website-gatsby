@@ -9,3 +9,37 @@
         text-align: center;
     }
 }
+
+.logo {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+    display: block;
+    color: black;
+    &:hover {
+        color: green;
+        text-decoration: none;
+    }
+    &.mobile-logo {
+        position: fixed;
+        z-index: 1100;
+        top: 25px;
+        left: 30px;
+        font-size: 40px;
+        @include media-breakpoint-up(md) {
+            display: none;
+        }
+    }
+}
+
+.slogan {
+    transform: rotate(-90deg);
+    font-size: 13px;
+    span {
+        border-bottom: 1px solid black;
+        color: black;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}

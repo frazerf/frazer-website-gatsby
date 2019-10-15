@@ -12,13 +12,14 @@ class ProjectIndex extends React.Component {
             <div className="row justify-content-md-center">
                 <nav className="col-11">
                 <ul className="nav-list">
-                {posts.map(({ node }) => {
+                  <li><h6>Projects</h6></li>
+                  {posts.map(({ node }) => {
                     return (
                     <li key={node.slug}>
-                    <ProjectPreview project={node}></ProjectPreview>
+                      <ProjectPreview project={node}></ProjectPreview>
                     </li>
                     )
-                })}
+                  })}
                 </ul>
                 </nav>
             </div>
