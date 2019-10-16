@@ -1,8 +1,11 @@
 .hero {
-    height: 100vh;
+    height: 70vh;
     overflow: hidden;
     position: relative;
-    &-image {
+    @include media-breakpoint-up(md) {
+        height: 100vh;
+    }
+    &-media {
         height: 100%;
         position: absolute;
         top: 0;

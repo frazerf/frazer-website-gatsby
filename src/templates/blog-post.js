@@ -26,7 +26,7 @@ class BlogPost extends Component {
                       </div>
                     </div>
                   </div>
-                  <div className="hero-image">
+                  <div className="hero-media">
                     <Img fluid={heroImage.sizes} />
                   </div>
                 </div>
