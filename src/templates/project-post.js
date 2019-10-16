@@ -34,7 +34,7 @@ class ProjectPost extends Component {
                   )}
                   {heroVideo !== null && (
                     <div className="hero-media">
-                      <video autoPlay={true} loop={true} playsInline={true} controls={false} poster={heroImage.file.url}>
+                      <video autoPlay={true} loop={true} playsInline={true} muted={true} controls={false} poster={heroImage.file.url}>
                         <source src={heroVideo.file.url} type="video/mp4" />
                       </video>
                     </div>
