@@ -11,6 +11,7 @@ class ProjectPost extends Component {
             title,
             createdAt,
             heroImage,
+            heroVideo,
             blocks,
         } = this.props.data.contentfulProject
         return (
@@ -26,9 +27,18 @@ class ProjectPost extends Component {
                       </div>
                     </div>
                   </div>
-                  <div className="hero-image">
-                    <Img fluid={heroImage.sizes} />
-                  </div>
+                  {heroVideo === null && (
+                    <div className="hero-image">
+                      <Img fluid={heroImage.sizes} />
+                    </div>
+                  )}
+                  {heroVideo !== null && (
+                    <div className="hero-image">
+                      <video autoPlay={true} loop={true} controls={false} poster={heroImage.file.url}>
+                        <source src={heroVideo.file.url} type="video/mp4" />
+                      </video>
+                    </div>
+                  )}
                 </div>
                 {blocks && <ContentModules blocks={blocks} />}
             </div>
@@ -58,6 +68,14 @@ export const pageQuery = graphql`
           srcWebp
           srcSetWebp
           sizes
+        }
+        file {
+          url
+        }
+      }
+      heroVideo {
+        file {
+          url
         }
       }
       leadin {
