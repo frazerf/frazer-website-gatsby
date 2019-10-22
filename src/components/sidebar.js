@@ -38,6 +38,7 @@ class Sidebar extends React.Component {
       <Menu
         right
         disableCloseOnEsc
+        bodyClassName={ "menu-open" }
         width={ 380 }
         isOpen={this.state.menuOpen}
         onStateChange={(state) => this.handleStateChange(state)}

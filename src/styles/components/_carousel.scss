@@ -1,0 +1,29 @@
+.carousel-block {
+    .slick-slide {
+        height: 90vh;
+        .image-block {
+            padding: 0 15px;
+        }
+        div {
+            height: 100%;
+        }
+    }
+    .slick-dots {
+        bottom: -40px;
+        li {
+            button {
+                &::before {
+                    font-size: 10px;
+                    transition: 300ms font-size ease-in-out;
+                }
+            }
+            &.slick-active {
+                button {
+                    &::before {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}

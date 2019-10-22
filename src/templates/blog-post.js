@@ -78,6 +78,30 @@ export const pageQuery = graphql`
               }
             }
           }
+          ... on ContentfulBlockOverview {
+            title
+            overviewContent {
+              id
+              childMarkdownRemark {
+                id
+                html
+              }
+            }
+            specs {
+              id
+              childMarkdownRemark {
+                id
+                html
+              }
+            }
+            tech {
+              id
+              childMarkdownRemark {
+                id
+                html
+              }
+            }
+          }
           ... on ContentfulBlockImage {
             imageSize
             image {
@@ -92,6 +116,13 @@ export const pageQuery = graphql`
             }
             caption
           }
+          ... on ContentfulBlockVideo {
+            video {
+              file {
+                url
+              }
+            }
+          }
           ... on ContentfulBlockMultipleImage {
             images {
               sizes(quality: 100, maxWidth: 1800) {
@@ -104,6 +135,25 @@ export const pageQuery = graphql`
               }
             }
             caption
+          }
+          ... on ContentfulBlockContentAndImage {
+            content {
+              id
+              childMarkdownRemark {
+                id
+                html
+              }
+            }
+            image {
+              sizes(quality: 100, maxWidth: 1800) {
+                aspectRatio
+                src
+                srcSet
+                srcWebp
+                srcSetWebp
+                sizes
+              }
+            }
           }
         }
       }

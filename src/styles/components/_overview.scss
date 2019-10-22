@@ -1,0 +1,14 @@
+.overview {
+    &-specs {
+        margin-bottom: 60px;
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            li {
+                margin: 0 0 rem(8px) 0;
+                font-size: 15px;
+            }
+        }
+    }
+}

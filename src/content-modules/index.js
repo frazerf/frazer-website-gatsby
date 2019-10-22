@@ -2,13 +2,21 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import BlockTextArea from './blocktextarea';
+import BlockOverview from './blockoverview';
 import BlockImage from './blockimage';
 import BlockMultipleImage from './blockmultipleimage';
+import BlockVideo from './blockvideo';
+import BlockContentAndImage from './blockcontentandimage';
+import BlockCarousel from './blockcarousel';
 
 const MODULE_MAP = {
   ContentfulBlockTextArea: BlockTextArea,
+  ContentfulBlockOverview: BlockOverview,
   ContentfulBlockImage: BlockImage,
-  ContentfulBlockMultipleImage: BlockMultipleImage
+  ContentfulBlockMultipleImage: BlockMultipleImage,
+  ContentfulBlockVideo: BlockVideo,
+  ContentfulBlockContentAndImage: BlockContentAndImage,
+  ContentfulBlockCarousel: BlockCarousel
 };
 
 const propTypes = {

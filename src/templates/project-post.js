@@ -9,9 +9,9 @@ class ProjectPost extends Component {
     render() {
         const {
             title,
-            createdAt,
             heroImage,
             heroVideo,
+            leadin,
             blocks,
         } = this.props.data.contentfulProject
         return (
@@ -22,7 +22,7 @@ class ProjectPost extends Component {
                       <div className="row justify-content-md-center">
                         <div className="col-11 t-light">
                           <h2>{title}</h2>
-                          <p>By Frazer Findlater | {createdAt} | Technology</p>
+                          <div dangerouslySetInnerHTML={{__html:leadin.childMarkdownRemark.html}} />
                         </div>
                       </div>
                     </div>
@@ -88,7 +88,32 @@ export const pageQuery = graphql`
         ... on Node {
           ... on ContentfulBlockTextArea {
             id
+            columnSize
             body {
+              id
+              childMarkdownRemark {
+                id
+                html
+              }
+            }
+          }
+          ... on ContentfulBlockOverview {
+            title
+            overviewContent {
+              id
+              childMarkdownRemark {
+                id
+                html
+              }
+            }
+            specs {
+              id
+              childMarkdownRemark {
+                id
+                html
+              }
+            }
+            tech {
               id
               childMarkdownRemark {
                 id
@@ -110,6 +135,13 @@ export const pageQuery = graphql`
             }
             caption
           }
+          ... on ContentfulBlockVideo {
+            video {
+              file {
+                url
+              }
+            }
+          }
           ... on ContentfulBlockMultipleImage {
             images {
               sizes(quality: 100, maxWidth: 1800) {
@@ -122,6 +154,38 @@ export const pageQuery = graphql`
               }
             }
             caption
+          }
+          ... on ContentfulBlockCarousel {
+            images {
+              id
+              sizes(quality: 100, maxWidth: 1800) {
+                aspectRatio
+                src
+                srcSet
+                srcWebp
+                srcSetWebp
+                sizes
+              }
+            }
+          }
+          ... on ContentfulBlockContentAndImage {
+            content {
+              id
+              childMarkdownRemark {
+                id
+                html
+              }
+            }
+            image {
+              sizes(quality: 100, maxWidth: 1800) {
+                aspectRatio
+                src
+                srcSet
+                srcWebp
+                srcSetWebp
+                sizes
+              }
+            }
           }
         }
       }

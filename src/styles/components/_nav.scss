@@ -28,12 +28,59 @@ nav {
     font-family: 'Silka semibold';
     margin-bottom: 20px;
     font-size: 30px;
+    opacity: 0;
+    position: relative;
+    right: -20px;
+    .menu-open & {
+      animation-name: fadeIn;
+      animation-duration: 1.5s;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+    }
     @include media-breakpoint-up(md) {
       text-align: right;
     }
     a {
       color: white;
     }
+    .menu-open & {
+      &:nth-of-type(1) {
+        animation-delay: 0.5s;
+      }
+      &:nth-of-type(2) {
+        animation-delay: 1s;
+      }
+      &:nth-of-type(3) {
+        animation-delay: 1.5s;
+      }
+      &:nth-of-type(4) {
+        animation-delay: 2s;
+      }
+      &:nth-of-type(5) {
+        animation-delay: 2.5s;
+      }
+      &:nth-of-type(6) {
+        animation-delay: 3s;
+      }
+      &:nth-of-type(7) {
+        animation-delay: 3.5s;
+      }
+      &:nth-of-type(8) {
+        animation-delay: 4s;
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    right: -20px;
+  }
+  
+  to {
+    opacity: 1;
+    right: 0px;
   }
 }
 
@@ -42,20 +89,21 @@ nav {
 /* Position and sizing of burger button */
 .bm-burger-button {
   position: fixed;
-  width: 36px;
-  height: 30px;
+  width: 30px;
+  height: 25px;
   right: 36px;
   top: 36px;
 }
 
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
-  background: #373a47;
+  background: black;
+  transition: 300ms all ease-in-out;
 }
 
 /* Color/shape of burger icon bars on hover*/
 .bm-burger-bars-hover {
-  background: #a90000;
+  background: rgba(0, 0, 0, 0.999);
 }
 
 /* Position and sizing of clickable cross button */
@@ -85,7 +133,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 }
 /* General sidebar styles */
 .bm-menu {
-  background: #373a47;
+  background: black;
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
 }
