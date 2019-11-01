@@ -13,14 +13,14 @@ class BlogIndex extends React.Component {
           <div className="row justify-content-md-center">
             <nav className="col-11">
               <ul className="nav-list">
-              <li><h6>Life</h6></li>
-              {posts.map(({ node }) => {
-                return (
-                <li key={node.slug}>
-                  <BlogPreview blog={node}></BlogPreview>
-                </li>
-                )
-              })}
+                <li><h6>Life</h6></li>
+                {posts.map(({ node }) => {
+                  return (
+                  <li key={node.slug}>
+                    <BlogPreview blog={node}></BlogPreview>
+                  </li>
+                  )
+                })}
               </ul>
             </nav>
           </div>

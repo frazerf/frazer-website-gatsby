@@ -5,9 +5,8 @@ import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 export default ({ project }) => (
     <>
-        <AniLink cover bg="#eeeeee" duration={2} to={`/project/${project.slug}/`}>{project.title}</AniLink>
-        {/* <Img sizes={blog.heroImage.sizes} /> */}
-        {/* <p>{blog.leadin.childMarkdownRemark.excerpt}</p>  */}
+        <AniLink fade to={`/project/${project.slug}/`}>{project.title}</AniLink>
+        <p>{project.leadin.childMarkdownRemark.excerpt}</p>
     </>
    
 )

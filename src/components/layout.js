@@ -38,8 +38,7 @@ const Layout = ({ children }) => (
         </Helmet>
         <div className="outer-container">
           <Sidebar nav={data} />
-          
-            {children}
+          {children}
        
         </div>
       </>

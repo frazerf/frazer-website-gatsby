@@ -57,7 +57,7 @@ export default class Index extends React.Component {
 
 export const pageQuery = graphql`
   query pageQuery {
-    allContentfulBlog(limit: 3, sort: { fields: [createdAt], order: DESC }) {
+    allContentfulBlog(limit: 3, sort: { fields: [updatedAt], order: DESC }) {
       edges {
         node {
           title
@@ -76,7 +76,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    allContentfulProject(limit: 6, sort: { fields: [createdAt], order: DESC }) {
+    allContentfulProject(limit: 6, sort: { fields: [updatedAt], order: DESC }) {
       edges {
         node {
           title

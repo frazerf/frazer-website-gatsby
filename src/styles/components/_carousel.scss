@@ -1,8 +1,14 @@
 .carousel-block {
     .slick-slide {
-        height: 90vh;
+        height: 30vh;
+        @include media-breakpoint-up(md) {
+            height: 90vh;
+        }
         .image-block {
-            padding: 0 15px;
+            padding: 0 5px;
+            @include media-breakpoint-up(md) {
+                padding: 0 15px;
+            }
         }
         div {
             height: 100%;

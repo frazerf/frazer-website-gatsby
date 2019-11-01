@@ -2,46 +2,39 @@ import React, { Component} from 'react';
 import { graphql } from 'gatsby'
 import Proptypes from 'prop-types';
 import Img from 'gatsby-image'
+import Helmet from 'react-helmet'
 import ContentModules from '../content-modules'
 
 class ProjectPost extends Component {
 
     render() {
         const {
-            title,
             heroImage,
             heroVideo,
-            leadin,
             blocks,
         } = this.props.data.contentfulProject
         return (
           <div className="main-content">
-                <div className="hero animated fadeInUp">
-                  <div className="hero-content">
-                    <div className="container">
-                      <div className="row justify-content-md-center">
-                        <div className="col-11 t-light">
-                          <h2>{title}</h2>
-                          <div dangerouslySetInnerHTML={{__html:leadin.childMarkdownRemark.html}} />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  {heroVideo === null && (
-                    <div className="hero-media">
-                      <Img fluid={heroImage.sizes} />
-                    </div>
-                  )}
-                  {heroVideo !== null && (
-                    <div className="hero-media">
-                      <video autoPlay={true} loop={true} playsInline={true} muted={true} controls={false} poster={heroImage.file.url}>
-                        <source src={heroVideo.file.url} type="video/mp4" />
-                      </video>
-                    </div>
-                  )}
+            <Helmet>
+              <body className="project-page" />
+            </Helmet>
+            <div className="hero animated fadeInUp">
+              
+              {heroVideo === null && (
+                <div className="hero-media">
+                  <Img fluid={heroImage.sizes} />
                 </div>
-                {blocks && <ContentModules blocks={blocks} />}
+              )}
+              {heroVideo !== null && (
+                <div className="hero-media">
+                  <video autoPlay={true} loop={true} playsInline={true} muted={true} controls={false} poster={heroImage.file.url}>
+                    <source src={heroVideo.file.url} type="video/mp4" />
+                  </video>
+                </div>
+              )}
             </div>
+            {blocks && <ContentModules blocks={blocks} />}
+          </div>
         )
     }
 }
@@ -98,7 +91,13 @@ export const pageQuery = graphql`
             }
           }
           ... on ContentfulBlockOverview {
-            title
+            title {
+              id
+              childMarkdownRemark {
+                id
+                html
+              }
+            }
             overviewContent {
               id
               childMarkdownRemark {

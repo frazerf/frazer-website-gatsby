@@ -8,8 +8,19 @@ class Sidebar extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      menuOpen: false
+      menuOpen: false,
+      activeClass: ''
     }
+  }
+
+  componentDidMount(){
+    window.addEventListener('scroll', () => {
+       let activeClass = '';
+       if(window.scrollY > 300){
+           activeClass = 'active';
+       }
+       this.setState({ activeClass });
+    });
   }
 
   // This keeps your state in sync with the opening/closing of the menu
@@ -35,35 +46,26 @@ class Sidebar extends React.Component {
 
     return (
     <div>
-      <Menu
-        right
-        disableCloseOnEsc
-        bodyClassName={ "menu-open" }
-        width={ 380 }
-        isOpen={this.state.menuOpen}
-        onStateChange={(state) => this.handleStateChange(state)}
-      >
-        <ul>
-          {data.map((item, i) =>
-            <li key={item.id}>
-              <AniLink onClick={() => this.closeMenu()} fade to={item.navigationLink}>{item.navigationTitle}</AniLink>
-            </li>
-          )}
-        </ul>
-      </Menu>
-      <AniLink className="logo mobile-logo" cover bg="#eeeeee" direction="right" duration={1.7} to={`/`}>f.</AniLink>
-      <div className="sidebar">
+      <div className={`sidebar ${this.state.activeClass}`}>
         <div className="sidebar-container">
           <AniLink className="logo" cover bg="#eeeeee" direction="right" duration={1.7} to={`/`}>f.</AniLink>
           
-          <div>
-            <div className="slogan">
-              <span>friends</span>
-            </div>
-          </div>
-          <span className="socials">
-            +
-          </span>
+          <Menu
+            right
+            disableCloseOnEsc
+            bodyClassName={ "menu-open" }
+            width={ 380 }
+            isOpen={this.state.menuOpen}
+            onStateChange={(state) => this.handleStateChange(state)}
+          >
+            <ul>
+              {data.map((item, i) =>
+                <li key={item.id}>
+                  <AniLink onClick={() => this.closeMenu()} fade to={item.navigationLink}>{item.navigationTitle}</AniLink>
+                </li>
+              )}
+            </ul>
+          </Menu>
         </div>
       </div>
     </div>

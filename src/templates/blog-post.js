@@ -2,6 +2,7 @@ import React, { Component} from 'react';
 import { graphql } from 'gatsby'
 import Proptypes from 'prop-types';
 import Img from 'gatsby-image'
+import Helmet from 'react-helmet'
 import ContentModules from '../content-modules'
 
 class BlogPost extends Component {
@@ -15,23 +16,26 @@ class BlogPost extends Component {
         } = this.props.data.contentfulBlog
         return (
           <div className="main-content">
-                <div className="hero animated fadeInUp">
-                  <div className="hero-content">
-                    <div className="container">
-                      <div className="row justify-content-md-center">
-                        <div className="col-11 t-light">
-                          <h2>{title}</h2>
-                          <p>By Frazer Findlater | {createdAt} | Technology</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="hero-media">
-                    <Img fluid={heroImage.sizes} />
+            <Helmet>
+              <body className="blog-page" />
+            </Helmet>
+            <div className="hero animated fadeInUp">
+              <div className="hero-media">
+                <Img fluid={heroImage.sizes} />
+              </div>
+            </div>
+            <div className="spacer no-bottom hero-blog_content">
+              <div className="container">
+                <div className="row">
+                  <div className="col-12">
+                    <h2><span>{title}</span></h2>
+                    <h5>By Frazer Findlater | {createdAt}</h5>
                   </div>
                 </div>
-                {blocks && <ContentModules blocks={blocks} />}
+              </div>
             </div>
+            {blocks && <ContentModules blocks={blocks} />}
+          </div>
         )
     }
 }
@@ -79,7 +83,13 @@ export const pageQuery = graphql`
             }
           }
           ... on ContentfulBlockOverview {
-            title
+            title {
+              id
+              childMarkdownRemark {
+                id
+                html
+              }
+            }
             overviewContent {
               id
               childMarkdownRemark {

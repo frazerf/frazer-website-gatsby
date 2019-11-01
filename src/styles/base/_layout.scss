@@ -3,15 +3,25 @@ body {
 }
 
 .container {
-    max-width: 96%;
+    max-width: 90%;
+    transition: 500ms ease-in-out all;
+    @include media-breakpoint-up(md) {
+        max-width: 76%;
+    }
+    &--large {
+        margin: 0 20px;
+    }
+    .blog-page & {
+        max-width: 66%;
+    }
 }
 
 .spacer {
     padding-top: 40px;
     padding-bottom: 40px;
     @include media-breakpoint-up(md) {
-        padding-top: 75px;
-        padding-bottom: 75px;
+        padding-top: 50px;
+        padding-bottom: 50px;
     }
     &--top {
         padding-top: 120px;
@@ -34,16 +44,9 @@ body {
 }
 
 .sidebar {
-    width: 180px;
+    width: 100%;
     position: fixed;
-    height: 100vh;
-    border-right: 1px solid #ddd;
-    background: white;
     z-index: 1200;
-    display: none;
-    @include media-breakpoint-up(md) {
-        display: block;
-    }
 }
 
 .main-content {
@@ -51,7 +54,4 @@ body {
     padding-left: 0;
     min-height: 100vh;
     background: white;
-    @include media-breakpoint-up(md) {
-        padding-left: 180px;
-    }
 }

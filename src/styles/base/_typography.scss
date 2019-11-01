@@ -9,10 +9,10 @@
 }
 
 .h2 {
-  font-size: 48px;
-  line-height: 56px;
+  font-size: 42px;
+  line-height: 52px;
   font-family: 'Silka regular';
-  margin: 0 0 20px 0;
+  margin: 0 0 40px 0;
   span {
     font-family: 'Silka semibold';
   }
@@ -135,7 +135,7 @@ h1, h2, h3, h4, h5, h6, p, li {
       height: 2px;
       bottom: -7px;
       left: 0;
-      background: rgba($color: white, $alpha: 0);
+      background: rgba($color: black, $alpha: 0.05);
       transition: 300ms width ease-in-out;
       .t-light & {
         background: rgba($color: white, $alpha: 0.3);
