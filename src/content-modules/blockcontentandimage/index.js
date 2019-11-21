@@ -6,8 +6,8 @@ export default function BlockContentAndImage({image, content}) {
 
     <div className="spacer">
       <div class="container">
-        <div class="row">
-          <div class="col-md-6 col-12 d-flex align-items-center">
+        <div class="row d-flex align-items-center">
+          <div class="col-md-6 col-12">
             <div dangerouslySetInnerHTML={{__html:content.childMarkdownRemark.html}} />
           </div>
           <div class="col-md-6 col-12">

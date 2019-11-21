@@ -3,7 +3,7 @@ import {  } from "gatsby"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 import { slide as Menu } from 'react-burger-menu'
 
-class Sidebar extends React.Component {
+class Header extends React.Component {
 
   constructor (props) {
     super(props)
@@ -46,8 +46,8 @@ class Sidebar extends React.Component {
 
     return (
     <div>
-      <div className={`sidebar ${this.state.activeClass}`}>
-        <div className="sidebar-container">
+      <div className={`header ${this.state.activeClass}`}>
+        <div className="header-container">
           <AniLink className="logo" cover bg="#eeeeee" direction="right" duration={1.7} to={`/`}>f.</AniLink>
           
           <Menu
@@ -58,13 +58,30 @@ class Sidebar extends React.Component {
             isOpen={this.state.menuOpen}
             onStateChange={(state) => this.handleStateChange(state)}
           >
-            <ul>
-              {data.map((item, i) =>
-                <li key={item.id}>
-                  <AniLink onClick={() => this.closeMenu()} fade to={item.navigationLink}>{item.navigationTitle}</AniLink>
+            <AniLink className="logo" cover bg="#eeeeee" direction="right" duration={1.7} to={`/`}>f.</AniLink>
+            <div className="burger-menu">
+              <ul>
+                {data.map((item, i) =>
+                  <li key={item.id}>
+                    <AniLink onClick={() => this.closeMenu()} fade to={item.navigationLink}>{item.navigationTitle}</AniLink>
+                  </li>
+                )}
+              </ul>
+            </div>
+
+            <div className="navigation-social">
+              <ul>
+                <li>
+                  <a className="icon-facebook" href=""></a>
                 </li>
-              )}
-            </ul>
+                <li>
+                  <a className="icon-instagram" href=""></a>
+                </li>
+                <li>
+                  <a className="icon-linkedin2" href=""></a>
+                </li>
+              </ul>
+            </div>
           </Menu>
         </div>
       </div>
@@ -73,4 +90,4 @@ class Sidebar extends React.Component {
   }
 }
 
-export default Sidebar
+export default Header

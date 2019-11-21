@@ -1,6 +1,11 @@
 .overview {
     &-specs {
-        margin-bottom: 60px;
+        margin-top: 20px;
+        margin-bottom: 40px;
+        @include media-breakpoint-up(md) {
+            margin-top: 0;
+            margin-bottom: 60px;
+        }
         ul {
             margin: 0;
             padding: 0;

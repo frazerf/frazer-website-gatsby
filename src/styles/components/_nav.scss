@@ -4,7 +4,10 @@ nav {
     padding: 0;
     list-style: none;
     li {
-      @extend .h3;
+      font-size: 36px;
+      line-height: 50px;
+      font-family: 'Silka light';
+      margin: 0 0 35px 0;
       a {
         color: black;
         &:hover {
@@ -18,22 +21,42 @@ nav {
   }
 }
 
-.bm-item-list {
-  padding: 80px 60px 0 60px !important;
+.navigation-social {
+  position: absolute;
+  bottom: 60px;
+  right: 60px;
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    li {
+      margin-right: 30px;
+      &:nth-last-of-type(1) {
+        margin-right: 0;
+      }
+      a {
+        font-size: 20px;
+        color: white;
+      }
+    }
+  }
 }
-.bm-item {
+
+
+.bm-item.burger-menu {
   margin: 0;
   padding: 0;
   list-style: none;
   outline: none;
   li {
     text-align: center;
-    font-family: 'Silka semibold';
-    margin-bottom: 20px;
-    font-size: 30px;
+    font-family: 'Silka regular';
+    margin-bottom: 30px;
+    font-size: 40px;
     opacity: 0;
+    list-style: none;
     position: relative;
-    right: -20px;
     .menu-open & {
       animation-name: fadeIn;
       animation-duration: 1s;
@@ -98,6 +121,14 @@ nav {
   top: 26px;
 }
 
+.bm-cross-button {
+  right: 51px !important;
+  top: 25px !important;
+  @include media-breakpoint-up(md) {
+    right: 60px !important;
+  }
+}
+
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
   background: black;
@@ -135,14 +166,11 @@ Note: Beware of modifying this element as it can break the animations - you shou
   top: 0;
   width: 100% !important;
   z-index: 1222 !important;
-  @include media-breakpoint-up(md) {
-    width: 50% !important;
-  }
 }
 /* General sidebar styles */
 .bm-menu {
   background: black;
-  padding: 2.5em 1.5em 0;
+  padding: 120px 60px 100px 60px;
   font-size: 1.15em;
 }
 
@@ -154,7 +182,6 @@ Note: Beware of modifying this element as it can break the animations - you shou
 /* Wrapper for item list */
 .bm-item-list {
   color: #b8b7ad;
-  padding: 0.8em;
 }
 
 /* Individual item */

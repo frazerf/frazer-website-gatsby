@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
-import Sidebar from './sidebar'
+import Header from './header'
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -37,7 +37,7 @@ const Layout = ({ children }) => (
           <html lang="en" />
         </Helmet>
         <div className="outer-container">
-          <Sidebar nav={data} />
+          <Header nav={data} />
           {children}
        
         </div>

@@ -1,7 +1,7 @@
 .h1 {
   font-size: 60px;
   line-height: 72px;
-  font-family: 'Silka regular';
+  font-family: 'Silka light';
   margin: 0 0 50px 0;
   span {
     font-family: 'Silka semibold';
@@ -11,7 +11,7 @@
 .h2 {
   font-size: 42px;
   line-height: 52px;
-  font-family: 'Silka regular';
+  font-family: 'Silka light';
   margin: 0 0 40px 0;
   span {
     font-family: 'Silka semibold';
@@ -19,9 +19,9 @@
 }
 
 .h3 {
-  font-size: 36px;
-  line-height: 50px;
-  font-family: 'Silka regular';
+  font-size: 29px;
+  line-height: 45px;
+  font-family: 'Silka light';
   margin: 0 0 25px 0;
   span {
     font-family: 'Silka semibold';
@@ -31,7 +31,7 @@
 .h4 {
   font-size: 30px;
   line-height: 42px;
-  font-family: 'Silka semibold';
+  font-family: 'Silka light';
   margin: 0 0 15px 0;
   span {
     font-family: 'Silka light';
@@ -57,7 +57,7 @@
   font-size: 15px;
   line-height: 30px;
   margin: 0 0 20px 0;
-  font-family: 'Silka regular';
+  font-family: 'Silka light';
   &.leadin {
     font-size: 20px;
     line-height: 37px;
@@ -118,11 +118,11 @@ blockquote {
   }
 }
 
-h1, h2, h3, h4, h5, h6, p, li {
+h1, h2, h3, h4, h5, h6, p {
   a {
     text-decoration: none !important;
     position: relative;
-    color: blue;
+    color: black;
     .t-light & {
       color: white;
     }
@@ -135,10 +135,10 @@ h1, h2, h3, h4, h5, h6, p, li {
       height: 2px;
       bottom: -7px;
       left: 0;
-      background: rgba($color: black, $alpha: 0.05);
+      background: rgba($color: black, $alpha: 0.1);
       transition: 300ms width ease-in-out;
       .t-light & {
-        background: rgba($color: white, $alpha: 0.3);
+        background: rgba($color: white, $alpha: 0.1);
       }
     }
 
