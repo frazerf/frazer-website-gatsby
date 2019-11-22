@@ -36,10 +36,13 @@ const Layout = ({ children }) => (
         >
           <html lang="en" />
         </Helmet>
+        
         <div className="outer-container">
+          <div dangerouslySetInnerHTML="<script src='https://polyfill.webmonetization.org/polyfill.js' />" ></div>
+          <div dangerouslySetInnerHTML="<script src='https://cdn.coil.com/donate.js' />" ></div>
+          <div dangerouslySetInnerHTML="<script>window.WebMonetizationScripts.donate({paymentPointer: '$twitter.xrptipbot.com/frazerfindlater'})</script>" ></div>
           <Header nav={data} />
           {children}
-       
         </div>
       </>
     )}
