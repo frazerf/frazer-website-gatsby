@@ -1,0 +1,29 @@
+.socials {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    li {
+        margin-right: 30px;
+        &:nth-last-of-type(1) {
+        margin-right: 0;
+        }
+        a {
+        font-size: 0;
+        color: white;
+        &::before {
+            font-size: 20px;
+        }
+        }
+    }
+    &.left {
+        li {
+            margin-right: 0px;
+            margin-left: 30px;
+            &:nth-of-type(1) {
+                margin-right: 0;
+                margin-left: 0;
+            }
+        }
+    }
+}

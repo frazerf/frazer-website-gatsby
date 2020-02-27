@@ -1,56 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Saira+Condensed:600&display=swap');
+
 @font-face {
-  font-family: 'Silka light';
-  src: url('../fonts/silka-light-webfont.eot');
-  src: url('../fonts/silka-light-webfont.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/silka-light-webfont.woff2') format('woff2'),
-    url('../fonts/silka-light-webfont.woff') format('woff'),
-    url('../fonts/silka-light-webfont.ttf') format('truetype');
-  font-weight: 200;
-  font-style: normal;
+  font-family:"Manrope3 Light";
+  src:url("../fonts/Manrope3 Light 300.woff2") format("woff2"),
+      url("../fonts/Manrope3 Light 300.woff") format("woff"),
+      url("../fonts/Manrope3 Light 300.otf") format("opentype");
+  font-style:normal;font-weight:400;
 }
 
 @font-face {
-  font-family: 'Silka regular';
-  src: url('../fonts/silka-regular-webfont.eot');
-  src: url('../fonts/silka-regular-webfont.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/silka-regular-webfont.woff2') format('woff2'),
-    url('../fonts/silka-regular-webfont.woff') format('woff'),
-    url('../fonts/silka-regular-webfont.ttf') format('truetype');
-  font-weight: 300;
-  font-style: normal;
+  font-family:"Manrope3 Bold";
+  src:url("../fonts/Manrope3 Bold 700.woff2") format("woff2"),
+      url("../fonts/Manrope3 Bold 700.woff") format("woff"),
+      url("../fonts/Manrope3 Bold 700.otf") format("opentype");
+  font-style:normal;font-weight:400;
 }
 
 @font-face {
-  font-family: 'Silka medium';
-  src: url('../fonts/silka-medium-webfont.eot');
-  src: url('../fonts/silka-medium-webfont.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/silka-medium-webfont.woff2') format('woff2'),
-    url('../fonts/silka-medium-webfont.woff') format('woff'),
-    url('../fonts/silka-medium-webfont.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Silka semibold';
-  src: url('../fonts/silka-semibold-webfont.eot');
-  src: url('../fonts/silka-semibold-webfont.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/silka-semibold-webfont.woff2') format('woff2'),
-    url('../fonts/silka-semibold-webfont.woff') format('woff'),
-    url('../fonts/silka-semibold-webfont.ttf') format('truetype');
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Silka bold';
-  src: url('../fonts/silka-bold-webfont.eot');
-  src: url('../fonts/silka-bold-webfont.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/silka-bold-webfont.woff2') format('woff2'),
-    url('../fonts/silka-bold-webfont.woff') format('woff'),
-    url('../fonts/silka-bold-webfont.ttf') format('truetype');
-  font-weight: 600;
-  font-style: normal;
+  font-family:"Manrope3 Extra Bold";
+  src:url("../fonts/Manrope3 ExtraBold 800.woff2") format("woff2"),
+      url("../fonts/Manrope3 ExtraBold 800.woff") format("woff"),
+      url("../fonts/Manrope3 ExtraBold 800.otf") format("opentype");
+  font-style:normal;font-weight:400;
 }
 
 @font-face {

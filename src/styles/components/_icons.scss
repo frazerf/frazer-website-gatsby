@@ -1,0 +1,31 @@
+.icon-scroll {
+  width: 30px;
+  height: 50px;
+  box-shadow: inset 0 0 0 1.3px #fff;
+  border-radius: 25px;
+  position: absolute;
+  right: calc(10% + 15px);
+  &::before {
+    content: '';
+    position: absolute;
+    left: calc(50% - 2px);
+    width: 4px;
+    height: 4px;
+    background: #fff;
+    top: 8px;
+    border-radius: 4px;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-name: scroll;
+  }
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+}

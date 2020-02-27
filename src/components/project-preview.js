@@ -1,12 +1,20 @@
 import React from 'react'
-// import Img from 'gatsby-image'
-
-import AniLink from "gatsby-plugin-transition-link/AniLink"
+import Link from 'gatsby-link'
+import Img from 'gatsby-image'
 
 export default ({ project }) => (
     <>
-        <AniLink fade to={`/project/${project.slug}/`}>{project.title}</AniLink>
-        <p>{project.leadin.childMarkdownRemark.excerpt}</p>
+        <Link to={"project/" + project.slug}>
+            <div className="cards">
+                <div className="cards-inner">
+                    <Img sizes={project.heroImage.sizes} />
+                    <div className="content">
+                        <h5>Case Study</h5>
+                        <h4>{project.title}</h4>
+                        <p>{project.leadin.childMarkdownRemark.excerpt}</p>
+                    </div>
+                </div>
+            </div>
+        </Link> 
     </>
-   
 )

@@ -6,12 +6,17 @@
     }
 }
 
-.image-caption {
-    margin: 15px 0 0 0;
-    h5 {
-        color: rgb(170, 170, 170);
-        font-family: 'Silka regular';
+.image {
+    &--large {
+        width: 90%;
+        margin: 0 auto;
     }
+}
+
+.image-caption {
+    max-width: 600px;
+    margin: 10px auto 0;
+    text-align: center;
 }
 
 .col-image {

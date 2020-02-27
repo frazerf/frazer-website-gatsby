@@ -1,30 +1,28 @@
 import React from 'react'
+import Reveal from 'react-reveal/Reveal';
 
-export default function BlockOverview({title, overviewContent, specs, tech}) {
+export default function BlockOverview({overviewContent, specs, websiteUrl}) {
   return (
     <div className="spacer">
-      <div className="container overview">
-        <div class="row">
-          <div class="col-12">
-            <div dangerouslySetInnerHTML={{__html:title.childMarkdownRemark.html}} /> 
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-6 col-12">
-            <div dangerouslySetInnerHTML={{__html:overviewContent.childMarkdownRemark.html}} /> 
-          </div>
-          <div class="offset-md-3 col-md-3 col-12">
-            <div class="overview-specs">
-              <div dangerouslySetInnerHTML={{__html:specs.childMarkdownRemark.html}} />
+      <Reveal fraction={0.3} duration={2000} effect="fadeInUp">
+        <div className="container overview">
+          <div class="row">
+            <div class="col-md-7 col-12">
+              <div dangerouslySetInnerHTML={{__html:overviewContent.childMarkdownRemark.html}} /> 
             </div>
-            <div class="overview-specs">
-              <div class="icon-hammer"></div>
-              <div dangerouslySetInnerHTML={{__html:tech.childMarkdownRemark.html}} />
+            <div class="offset-md-1 col-md-4 col-12">
+              <div class="overview-specs">
+                <div dangerouslySetInnerHTML={{__html:specs.childMarkdownRemark.html}} />
+              </div>
+              {websiteUrl !== null &&
+                <div class="overview-specs">
+                  <p><a rel="noopener noreferrer" className="cta-arrow" href={websiteUrl} target="_blank">Visit Website <svg className="i-arrow" viewBox="0 0 40 40"> <circle cx="20" cy="20" r="19"></circle> <line x1="12.5" y1="20" x2="26.5" y2="20"></line> <line x1="23.5" y1="15" x2="27.5" y2="20"></line> <line x1="23.5" y1="25" x2="27.5" y2="20"></line></svg></a></p>
+                </div>
+              }
             </div>
           </div>
         </div>
-      </div>
+      </Reveal>
     </div>
   );
 }

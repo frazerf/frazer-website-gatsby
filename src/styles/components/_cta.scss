@@ -1,0 +1,22 @@
+.cta {
+    &-arrow {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        svg {
+            position: relative;
+            margin-left: 10px;
+            height: 30px;
+            width: 30px;
+            transition: 300ms ease-in-out transform;
+        }
+        a {
+            color: black;
+        }
+        &:hover {
+            svg {
+                transform: translateX(5px);
+            }
+        }
+    }
+}

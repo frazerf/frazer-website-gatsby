@@ -8,18 +8,26 @@ exports.createPages = ({graphql, actions}) => {
     resolve(
       graphql(`
         {
-          allContentfulBlog {
+          allContentfulBlog(sort: { fields: [updatedAt], order: DESC }) {
             edges {
               node {
                 id
                 slug
               }
+              next {
+                title
+                slug
+              }
             }
           }
-          allContentfulProject {
+          allContentfulProject(sort: { fields: [updatedAt], order: DESC }) {
             edges {
               node {
                 id
+                slug
+              }
+              next {
+                title
                 slug
               }
             }
@@ -34,7 +42,8 @@ exports.createPages = ({graphql, actions}) => {
             path: `/blog/${edge.node.slug}/`,
             component: blogPostTemplate,
             context: {
-              slug: edge.node.slug
+              slug: edge.node.slug,
+              next: edge.next
             }
           })
         })
@@ -43,7 +52,8 @@ exports.createPages = ({graphql, actions}) => {
             path: `/project/${edge.node.slug}/`,
             component: projectPostTemplate,
             context: {
-              slug: edge.node.slug
+              slug: edge.node.slug,
+              next: edge.next
             }
           })
         })

@@ -19,23 +19,23 @@ export default function BlockImage({image, caption, imageSize}) {
             <div className="row justify-content-md-center">
               <div className='col-12'>
                 <div className="image-caption">
-                  <h5>{caption}</h5>
+                  <p className="caption">{caption}</p>
                 </div>
               </div>
             </div>
           }
         </div>
       ) : (
-        <div className="container--large">
-          <div className="image-block">
+        <>
+          <div className="image--large">
             <Img sizes={image.sizes} />
           </div>
           {caption !== null &&
             <div className="image-caption">
-            <h5>{caption}</h5>
+              <p className="caption">{caption}</p>
             </div>
           }
-        </div>
+        </>
       )}
       </Reveal>
     </div>

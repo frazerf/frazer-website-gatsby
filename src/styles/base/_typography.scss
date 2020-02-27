@@ -1,69 +1,79 @@
 .h1 {
-  font-size: 60px;
-  line-height: 72px;
-  font-family: 'Silka light';
-  margin: 0 0 50px 0;
-  span {
-    font-family: 'Silka semibold';
+  font-size: 37px;
+  line-height: 41px;
+  font-family: $primary-font-ex-bold;
+  letter-spacing: -1px;
+  margin: 0 0 15px 0;
+  @include media-breakpoint-up(md) {
+    font-size: 54px;
+    line-height: 68px;
+    margin: 0 0 30px 0;
   }
 }
 
 .h2 {
-  font-size: 42px;
-  line-height: 52px;
-  font-family: 'Silka light';
+  font-size: 45px;
+  line-height: 60px;
+  font-family: $primary-font-bold;
   margin: 0 0 40px 0;
+  letter-spacing: -1px;
   span {
-    font-family: 'Silka semibold';
+    font-family: $primary-font-light;
   }
 }
 
 .h3 {
-  font-size: 29px;
+  font-size: 32px;
   line-height: 45px;
-  font-family: 'Silka light';
   margin: 0 0 25px 0;
-  span {
-    font-family: 'Silka semibold';
-  }
+  font-family: $primary-font-bold;
 }
 
 .h4 {
-  font-size: 30px;
-  line-height: 42px;
-  font-family: 'Silka light';
+  font-size: 20px;
+  line-height: 30px;
   margin: 0 0 15px 0;
-  span {
-    font-family: 'Silka light';
-  }
+  font-family: $primary-font-bold;
 }
 
 .h5 {
-  font-size: 15px;
-  line-height: 20px;
-  font-family: 'Silka semibold';
-  margin: 0 0 10px 0;
+  font-size: 16px;
+  line-height: 24px;
+  text-transform: uppercase;
+  font-family: $secondary-font;
+  letter-spacing: 1px;
+  display: inline-block;
+  border-bottom: 3px solid;
 }
 
 .h6 {
   font-size: 15px;
   line-height: 18px;
-  font-family: 'Silka regular';
   margin: 0 0 18px 0;
   color: grey;
 }
 
 .p {
-  font-size: 15px;
-  line-height: 30px;
+  font-size: 17px;
+  line-height: 26px;
   margin: 0 0 20px 0;
-  font-family: 'Silka light';
-  &.leadin {
-    font-size: 20px;
-    line-height: 37px;
+  font-family: $primary-font-light;
+  @include media-breakpoint-up(md) {
+    font-size: 19px;
+    line-height: 34px;
+    margin: 0 0 20px 0;
   }
-  strong {
-    font-family: 'Silka semibold';
+  &.leadin {
+    font-size: 25px;
+    line-height: 44px;
+    font-family: $primary-font-light;
+  }
+  &.caption {
+    font-size: 13px;
+    letter-spacing: 0.1px;
+    color: #757575;
+    line-height: 24px;
+    margin: 10px 0;
   }
 }
 
@@ -75,7 +85,6 @@
   p {
     font-size: 30px;
     line-height: 45px;
-    font-family: 'Silka medium';
     margin: 0;
   }
 }
@@ -116,6 +125,26 @@ blockquote {
   h1, h2, h3, h4, h5, h6, p {
     color: white;
   }
+  .cta-arrow {
+    svg {
+      circle {
+        fill: transparent;
+        stroke: white;
+      }
+      line {
+        stroke: white;
+      }
+    }
+  }
+}
+
+a {
+  h1, h2, h3, h4, h5, h6, p {
+    color: black;
+  }
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -125,42 +154,6 @@ h1, h2, h3, h4, h5, h6, p {
     color: black;
     .t-light & {
       color: white;
-    }
-
-    &::before {
-      content: "";
-      display: block;
-      width: 100%;
-      position: absolute;
-      height: 2px;
-      bottom: -7px;
-      left: 0;
-      background: rgba($color: black, $alpha: 0.1);
-      transition: 300ms width ease-in-out;
-      .t-light & {
-        background: rgba($color: white, $alpha: 0.1);
-      }
-    }
-
-    &::after {
-      content: "";
-      display: block;
-      width: 0%;
-      position: absolute;
-      height: 2px;
-      left: 0;
-      bottom: -7px;
-      background: black;
-      transition: 300ms width ease-in-out;
-      .t-light & {
-        background: rgba($color: white, $alpha: 1);
-      }
-    }
-
-    &:hover {
-      &::after {
-          width: 100%;
-      }
     }
   }
 }

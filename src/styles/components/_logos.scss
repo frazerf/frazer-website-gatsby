@@ -1,0 +1,40 @@
+.logo-container {
+    display: grid;
+    grid-template-columns: repeat(2,120px);
+    grid-auto-rows: 1fr;
+    justify-content: space-around;
+    align-content: center;
+    grid-row-gap: 40px;
+    align-items: center;
+    padding-bottom: 60px;
+    text-align: center;
+    margin-top: 40px;
+
+    @include media-breakpoint-up(md) {
+        grid-template-columns: repeat(3,140px);
+        grid-row-gap: 160px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        grid-template-columns: repeat(4,140px);
+        justify-content: space-between;
+        grid-row-gap: 160px;
+        padding-bottom: 120px;
+    }
+    .logo-item {
+        a {
+            display: block;
+        }
+        img {
+            max-width: 100%;
+            max-height: 70px;
+            filter: grayscale(1);
+            opacity: 0.5 !important;
+            transition: 300ms ease-in-out all !important;
+            &:hover {
+                filter: grayscale(0);
+                opacity: 1 !important;
+            }
+        }
+    }
+}

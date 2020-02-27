@@ -8,6 +8,7 @@ import BlockMultipleImage from './blockmultipleimage';
 import BlockVideo from './blockvideo';
 import BlockContentAndImage from './blockcontentandimage';
 import BlockCarousel from './blockcarousel';
+import BlockContentBlock from './blockcontentblock';
 
 const MODULE_MAP = {
   ContentfulBlockTextArea: BlockTextArea,
@@ -16,7 +17,8 @@ const MODULE_MAP = {
   ContentfulBlockMultipleImage: BlockMultipleImage,
   ContentfulBlockVideo: BlockVideo,
   ContentfulBlockContentAndImage: BlockContentAndImage,
-  ContentfulBlockCarousel: BlockCarousel
+  ContentfulBlockCarousel: BlockCarousel,
+  ContentfulBlockContentBlock: BlockContentBlock,
 };
 
 const propTypes = {

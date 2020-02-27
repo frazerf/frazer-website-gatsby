@@ -1,0 +1,27 @@
+form {
+    &.contact {
+        margin-top: 100px;
+    }
+    input, textarea {
+        display: block;
+        width: 100%;
+        margin-bottom: 40px;
+        background: transparent;
+        border: none;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+        padding-bottom: 15px;
+        transition: 300ms ease-in-out all;
+        &:focus {
+            border-bottom: 2px solid rgba(0, 0, 0, 1);
+            outline: 0;
+        }
+    }
+    textarea {
+        height: 200px;
+    }
+    button {
+        background: transparent;
+        border: 0;
+        font-size: 19px;
+    }
+}

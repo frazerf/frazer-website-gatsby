@@ -1,0 +1,46 @@
+.cards {
+    height: 100%;
+    border-bottom: 20px solid transparent;
+    transition: 300ms ease-in-out transform;
+    .carousel-slider--blog & {
+        width: 350px;
+        margin-right: 20px;
+    }
+    &-inner {
+        background: white;
+        padding: 15px 15px 30px 15px;
+        margin-bottom: 20px;
+        height: 100%;
+        // box-shadow: 0px 0px 20px #f1f1f1;
+        // transition: 300ms ease-in-out box-shadow;
+    }
+    .gatsby-image-wrapper {
+        height: 200px;
+        @include media-breakpoint-up(md) {
+            height: 17vw;
+        }
+    }
+    .content {
+        padding-top: 20px;
+        p {
+            margin-bottom: 0;
+            font-size: 15px;
+            line-height: 24px;
+            font-weight: 300;
+        }
+        .cta-arrow {
+            margin-top: 20px;
+        }
+    }
+    &:hover {
+        transform: translateY(-5px);
+        // .cards-inner {
+        //     box-shadow: 0px 0px 20px #f1f1f1;
+        // }
+        .cta-arrow {
+            svg {
+                margin-left: 15px;
+            }
+        }
+    }
+}

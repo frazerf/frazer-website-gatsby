@@ -1,26 +1,17 @@
 import React from 'react'
 import {  } from "gatsby"
-import AniLink from "gatsby-plugin-transition-link/AniLink"
+import Link from "gatsby-link"
+import Headroom from "react-headroom"
 import { slide as Menu } from 'react-burger-menu'
+import MenuCross from '../images/x.svg';
 
 class Header extends React.Component {
 
   constructor (props) {
     super(props)
     this.state = {
-      menuOpen: false,
-      activeClass: ''
+      menuOpen: false
     }
-  }
-
-  componentDidMount(){
-    window.addEventListener('scroll', () => {
-       let activeClass = '';
-       if(window.scrollY > 300){
-           activeClass = 'active';
-       }
-       this.setState({ activeClass });
-    });
   }
 
   // This keeps your state in sync with the opening/closing of the menu
@@ -45,47 +36,51 @@ class Header extends React.Component {
     const data = this.props.nav.contentfulNavigation.navigationItems
 
     return (
-    <div>
-      <div className={`header ${this.state.activeClass}`}>
-        <div className="header-container">
-          <AniLink className="logo" cover bg="#eeeeee" direction="right" duration={1.7} to={`/`}>f.</AniLink>
-          
-          <Menu
-            right
-            disableCloseOnEsc
-            bodyClassName={ "menu-open" }
-            width={ 380 }
-            isOpen={this.state.menuOpen}
-            onStateChange={(state) => this.handleStateChange(state)}
-          >
-            <AniLink className="logo" cover bg="#eeeeee" direction="right" duration={1.7} to={`/`}>f.</AniLink>
-            <div className="burger-menu">
-              <ul>
-                {data.map((item, i) =>
-                  <li key={item.id}>
-                    <AniLink onClick={() => this.closeMenu()} fade to={item.navigationLink}>{item.navigationTitle}</AniLink>
-                  </li>
-                )}
-              </ul>
-            </div>
+    <>
+      <div className="header">
+        <Headroom>
+          <div className="container">
+            <div className="header-container">
+              <Link className="logo" to={`/`}>logo</Link>
+              <Menu
+                right
+                bodyClassName={ "menu-open" }
+                isOpen={this.state.menuOpen}
+                customCrossIcon={ <img src={MenuCross} alt="Menu exit" /> }
+                onStateChange={(state) => this.handleStateChange(state)}
+              >
+                <div className="burger-menu">
+                  <ul>
+                    {data.map((item, i) =>
+                      <li key={item.id}>
+                        <h2><Link onClick={() => this.closeMenu()} to={item.navigationLink}>{item.navigationTitle}</Link></h2>
+                      </li>
+                    )}
+                    <li>
+                      <h2><Link onClick={() => this.closeMenu()} to="/contact/">Contact</Link></h2>
+                    </li>
+                  </ul>
+                </div>
 
-            <div className="navigation-social">
-              <ul>
-                <li>
-                  <a className="icon-facebook" href=""></a>
-                </li>
-                <li>
-                  <a className="icon-instagram" href=""></a>
-                </li>
-                <li>
-                  <a className="icon-linkedin2" href=""></a>
-                </li>
-              </ul>
+                <div className="navigation-social">
+                  <ul className="socials">
+                    <li>
+                      <a href="https://www.facebook.com/frazer.findlater" rel="noopener noreferrer" target="_blank" className="icon-facebook">Facebook</a>
+                    </li>
+                    <li>
+                      <a href="https://www.instagram.com/frazerf/" rel="noopener noreferrer" target="_blank" className="icon-instagram">Instagram</a>
+                    </li>
+                    <li>
+                      <a href="https://www.linkedin.com/in/frazer-findlater-b6116335/" rel="noopener noreferrer" target="_blank" className="icon-linkedin2">Linkedin</a>
+                    </li>
+                  </ul>
+                </div>
+              </Menu>
             </div>
-          </Menu>
-        </div>
+          </div>
+        </Headroom>
       </div>
-    </div>
+    </>
     )
   }
 }

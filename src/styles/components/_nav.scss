@@ -6,7 +6,6 @@ nav {
     li {
       font-size: 36px;
       line-height: 50px;
-      font-family: 'Silka light';
       margin: 0 0 35px 0;
       a {
         color: black;
@@ -23,24 +22,8 @@ nav {
 
 .navigation-social {
   position: absolute;
-  bottom: 60px;
-  right: 60px;
-  ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    display: flex;
-    li {
-      margin-right: 30px;
-      &:nth-last-of-type(1) {
-        margin-right: 0;
-      }
-      a {
-        font-size: 20px;
-        color: white;
-      }
-    }
-  }
+  bottom: 10%;
+  right: 10%;
 }
 
 
@@ -49,11 +32,13 @@ nav {
   padding: 0;
   list-style: none;
   outline: none;
+  ul {
+    margin: 0;
+    padding: 0;
+  }
   li {
     text-align: center;
-    font-family: 'Silka regular';
     margin-bottom: 30px;
-    font-size: 40px;
     opacity: 0;
     list-style: none;
     position: relative;
@@ -80,19 +65,16 @@ nav {
         animation-delay: 1.2s;
       }
       &:nth-of-type(4) {
-        animation-delay: 2s;
+        animation-delay: 1.6s;
       }
       &:nth-of-type(5) {
-        animation-delay: 2.5s;
+        animation-delay: 2s;
       }
       &:nth-of-type(6) {
-        animation-delay: 3s;
+        animation-delay: 2.4;
       }
       &:nth-of-type(7) {
-        animation-delay: 3.5s;
-      }
-      &:nth-of-type(8) {
-        animation-delay: 4s;
+        animation-delay: 2.8s;
       }
     }
   }
@@ -114,63 +96,55 @@ nav {
 
 /* Position and sizing of burger button */
 .bm-burger-button {
-  position: fixed;
+  position: relative;
   width: 25px;
   height: 20px;
-  right: 5%;
-  top: 26px;
 }
 
 .bm-cross-button {
   right: 51px !important;
   top: 25px !important;
   @include media-breakpoint-up(md) {
-    right: 60px !important;
+    right: 10% !important;
   }
 }
 
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
-  background: black;
-  transition: 1000ms all ease-in-out;
-  height: 13% !important;
-  .project-page &,
-  .blog-page & {
-    background: white;
-  }
+  background: white;
+  transition: 300ms all ease-in-out;
+  height: 11% !important;
 }
 
 /* Color/shape of burger icon bars on hover*/
 .bm-burger-bars-hover {
-  background: rgba(0, 0, 0, 0.999);
+  background: rgba(255, 255, 255, 0.80);
 }
 
 /* Position and sizing of clickable cross button */
 .bm-cross-button {
-  height: 24px;
-  width: 24px;
+  height: 20px !important;
+  width: 20px !important;
 }
 
-/* Color/shape of close button cross */
-.bm-cross {
-  background: #bdc3c7;
+.menu-open {
+  overflow: hidden;
 }
-
 /*
 Sidebar wrapper styles
 Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
 */
 .bm-menu-wrap {
   position: fixed;
-  height: 100%;
+  height: 100vh !important;
   top: 0;
   width: 100% !important;
   z-index: 1222 !important;
 }
 /* General sidebar styles */
 .bm-menu {
-  background: black;
-  padding: 120px 60px 100px 60px;
+  background: #131313;
+  padding: 120px 10% 100px 10%;
   font-size: 1.15em;
 }
 

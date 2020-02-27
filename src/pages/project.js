@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import Helmet from 'react-helmet'
 import ProjectPreview from '../components/project-preview'
 
 class ProjectIndex extends React.Component {
@@ -7,22 +8,32 @@ class ProjectIndex extends React.Component {
     const posts = this.props.data.allContentfulProject.edges;
 
     return (
-        <div className="main-content">
-        <div className="container spacer--top">
-            <div className="row justify-content-md-center">
-                <nav className="col-11">
-                <ul className="nav-list">
-                  <li><h6>Projects</h6></li>
-                  {posts.map(({ node }) => {
-                    return (
-                    <li key={node.slug}>
-                      <ProjectPreview project={node}></ProjectPreview>
-                    </li>
-                    )
-                  })}
-                </ul>
-                </nav>
+      <div className="animated fadeIn">
+        <Helmet>
+          <body className="dark-header" />
+        </Helmet>
+        <div className="section small-bottom">
+          <div className="container">
+            <div className="row">
+              <div className="col-8">
+                <h2>The life and times.</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+              </div>
             </div>
+          </div>
+        </div>
+        <div className="section light-grey small-top">
+          <div className="container">
+            <div className="row align-items-stretch">
+              {posts.map(({ node }) => {
+                return (
+                <div className="col-12 col-md-4" key={node.slug}>
+                  <ProjectPreview project={node}></ProjectPreview>
+                </div>
+                )
+              })}
+            </div>
+          </div>
         </div>
       </div>
     )
@@ -33,7 +44,7 @@ export default ProjectIndex
 
 export const pageQuery = graphql`
   query ProjectIndexQuery {
-    allContentfulProject(sort: { fields: [createdAt], order: DESC }) {
+    allContentfulProject(sort: { fields: [updatedAt], order: DESC }) {
       edges {
         node {
             title

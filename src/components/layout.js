@@ -6,6 +6,7 @@ import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
 import Header from './header'
+import Footer from './footer'
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -38,11 +39,9 @@ const Layout = ({ children }) => (
         </Helmet>
         
         <div className="outer-container">
-          <div dangerouslySetInnerHTML="<script src='https://polyfill.webmonetization.org/polyfill.js' />" ></div>
-          <div dangerouslySetInnerHTML="<script src='https://cdn.coil.com/donate.js' />" ></div>
-          <div dangerouslySetInnerHTML="<script>window.WebMonetizationScripts.donate({paymentPointer: '$twitter.xrptipbot.com/frazerfindlater'})</script>" ></div>
           <Header nav={data} />
           {children}
+          <Footer nav={data}/>
         </div>
       </>
     )}
