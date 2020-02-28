@@ -24,10 +24,17 @@ body {
 }
 
 .spacer {
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    @include media-breakpoint-up(md) {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
     &:nth-child(1) {
-        padding-top: 150px;
+        padding-top: 60px;
+        @include media-breakpoint-up(md) {
+            padding-top: 150px;
+        }
     }
 }
 
@@ -58,6 +65,11 @@ body {
     }
     &.small-bottom {
         padding-bottom: 30px;
+    }
+    &.mob-spacer-top {
+        @include media-breakpoint-down(sm) {
+            padding-top: 140px;
+        }
     }
     &-next {
         border-top: 2px solid;

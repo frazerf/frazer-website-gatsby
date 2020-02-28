@@ -12,7 +12,7 @@ class ProjectIndex extends React.Component {
         <Helmet>
           <body className="dark-header" />
         </Helmet>
-        <div className="section small-bottom">
+        <div className="section small-bottom mob-spacer-top">
           <div className="container">
             <div className="row">
               <div className="col-md-8 col-12">

@@ -6,7 +6,7 @@ const Contact = () => (
     <Helmet>
       <body className="dark-header" />
     </Helmet>
-    <div className="section">
+    <div className="section mob-spacer-top">
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-8">
