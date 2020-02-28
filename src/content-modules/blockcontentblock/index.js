@@ -14,7 +14,7 @@ export default function BlockContentBlock({id, contentTitle, contentItem}) {
           </div>
           <div className="row content-block">
             {contentItem.map((i, id) =>
-              <div key={id} className="col-4">
+              <div key={id} className="col-md-4 col-12">
                 <div className="item">
                   <h4>{i.title}</h4>
                   <div dangerouslySetInnerHTML={{__html:i.content.childMarkdownRemark.html}} />

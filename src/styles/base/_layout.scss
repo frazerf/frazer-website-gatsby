@@ -65,6 +65,9 @@ body {
         padding-bottom: 100px;
     }
     &.article-carousel {
-        padding-bottom: 250px;
+        padding-bottom: 140px;
+        @include media-breakpoint-up(md) {
+            padding-bottom: 250px;
+        }
     }
 }

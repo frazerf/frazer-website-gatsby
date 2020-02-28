@@ -35,7 +35,7 @@ const ProjectPost = ({ pageContext, data }) => {
         <div className="content t-light">
           <div className="container">
             <div className="row">
-              <div className="col-10">
+              <div className="col-12 col-md-10">
                 <h5>Case Study</h5>
                 <h1>{title}</h1>
               </div>

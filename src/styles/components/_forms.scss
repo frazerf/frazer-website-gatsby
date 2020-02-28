@@ -11,6 +11,8 @@ form {
         border-bottom: 2px solid rgba(0, 0, 0, 0.1);
         padding-bottom: 15px;
         transition: 300ms ease-in-out all;
+        border-radius: 0;
+        -webkit-appearance: none;
         &:focus {
             border-bottom: 2px solid rgba(0, 0, 0, 1);
             outline: 0;

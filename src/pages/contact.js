@@ -9,7 +9,7 @@ const Contact = () => (
     <div className="section">
       <div className="container">
         <div className="row">
-          <div className="col-8">
+          <div className="col-12 col-md-8">
             <h2>The life and times.</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
             <form className="contact" name="contact" method="POST" data-netlify="true">
