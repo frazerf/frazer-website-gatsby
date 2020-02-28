@@ -1,10 +1,14 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import fade from "flickity-fade"
 import Flickity from 'react-flickity-component'
 import Link from 'gatsby-link'
 import Img from 'gatsby-image'
 import Reveal from 'react-reveal/Reveal';
+
+const fade =
+  typeof window !== "undefined"
+    ? require("flickity-fade")
+    : () => null
 
 const flickityHeroOptions = {
   wrapAround: true,

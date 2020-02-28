@@ -11,7 +11,7 @@ const flickityOptions = {
   prevNextButtons: false
 }
 
-export default function BlockMultipleImage({images, id}) {
+export default function BlockCarousel({images, id}) {
   
   return (
     <div className="spacer">
