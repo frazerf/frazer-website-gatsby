@@ -16,20 +16,20 @@ const BlogPost = ({ pageContext, data }) => {
     blocks,
     leadin
   } = data.contentfulBlog
-  const { next } = pageContext
+  const { next, prev } = pageContext
 
   return (
     <div className="animated fadeIn">
       <Helmet>
-        <body className="dark-header small-container" />
+        <body className="dark-header small-container blog-page" />
       </Helmet>
       <div className="hero headline">
         <div className="content">
           <div className="container">
             <div className="row">
               <div className="col-12">
-                <h5>{category}</h5>
-                <h1>{title}</h1>
+                <div className="title gray-500">{category}</div>
+                <h2>{title}</h2>
                 <div className="date">{createdAt}</div>
               </div>
             </div>
@@ -52,7 +52,7 @@ const BlogPost = ({ pageContext, data }) => {
       </div>
       <Reveal fraction={0.3} duration={2000} effect="fadeInUp">
         <div className="blog-leadin">
-          <div className="container">
+          <div className="container-main">
             <div className="row">
               <div className="col-12">
                 <div dangerouslySetInnerHTML={{ __html: leadin.childMarkdownRemark.html }} />
@@ -63,18 +63,28 @@ const BlogPost = ({ pageContext, data }) => {
       </Reveal>
       {blocks && <ContentModules blocks={blocks} />}
 
-      {next &&
-        <div className="section-next">
-          <div className="container">
-            <Reveal fraction={0.3} duration={2000} effect="fadeInUp">
-              <div className="row">
-                <div className="col-12">
-                  <h4>Next Article</h4>
-                  <h2><Link to={"blog/" + next.slug}>{next.title}</Link></h2>
-                  <p><Link className="cta-arrow" to={"blog/" + next.slug}>Check it out <svg className="i-arrow" viewBox="0 0 40 40"> <circle cx="20" cy="20" r="19"></circle> <line x1="12.5" y1="20" x2="26.5" y2="20"></line> <line x1="23.5" y1="15" x2="27.5" y2="20"></line> <line x1="23.5" y1="25" x2="27.5" y2="20"></line></svg></Link></p>
-                </div>
+      {next
+        ? <div className="section-next">
+          <div className="container-large">
+            <Link to={"blog/" + next.slug} className="nextprevfooter">
+              <div className="content t-light">
+                <h4>Next Article</h4>
+                <h3>{next.title}</h3>
               </div>
-            </Reveal>
+              <Img sizes={next.heroImage.sizes} />
+            </Link>
+          </div>
+        </div>
+
+        : <div className="section-next">
+          <div className="container-large">
+            <Link to={"blog/" + prev.slug} className="nextprevfooter">
+              <div className="content t-light">
+                <h4>Previous Article</h4>
+                <h3>{prev.title}</h3>
+              </div>
+              <Img sizes={prev.heroImage.sizes} />
+            </Link>
           </div>
         </div>
       }
@@ -186,6 +196,33 @@ export const pageQuery = graphql`
               }
             }
             image {
+              sizes(quality: 100, maxWidth: 1800) {
+                aspectRatio
+                src
+                srcSet
+                srcWebp
+                srcSetWebp
+                sizes
+              }
+            }
+          }
+          ... on ContentfulBlockColourImage {
+            backgroundColour
+            image {
+              sizes(quality: 100, maxWidth: 1800) {
+                srcSet
+                src
+                srcWebp
+                srcSetWebp
+                sizes
+              }
+            }
+            caption
+          }
+          ... on ContentfulBlockColourCarousel {
+            backgroundColour            
+            imagesColour {
+              id
               sizes(quality: 100, maxWidth: 1800) {
                 aspectRatio
                 src

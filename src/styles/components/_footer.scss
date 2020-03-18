@@ -1,14 +1,98 @@
 footer {
-    background: #131313;
-    padding-top: 100px;
-    padding-bottom: 100px;
-    .footer-bottom {
-        margin-top: 60px;
-        p {
+    background: $gray-900;
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    @include media-breakpoint-up(md) {
+        padding-top: 160px;
+        padding-bottom: 160px;
+    }
+    .blog-page &, .project-page & {
+        display: none;
+    }
+    
+    .footer-lets-talk {
+        margin-bottom: 40px;
+        text-align: center;
+        @include media-breakpoint-up(md) {
+            text-align: left;
+            margin-bottom: 80px;
+        }
+        h3 {
+            margin-bottom: 0;
+            a {
+                color: $gray-500;
+            }
+        }
+    }
+
+    .footer-nav {
+        display: flex;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        justify-content: center;
+        @include media-breakpoint-up(md) {
+            justify-content: flex-start;
+        }
+        li {
+            margin-right: rem(20px);
+            font-size: rem(18px);
+            &:nth-last-of-type(1) {
+                margin-right: 0;
+            }
+            a {
+                color: $gray-500;
+                transition: 300ms ease-in-out color;
+
+                &:hover {
+                    color: $gray-300;
+                }
+            }
+        }
+    }
+
+    .footer-socials {
+        padding: 0;
+        margin: 30px 0 0 0;
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        @include media-breakpoint-up(md) {
+            justify-content: flex-end;
             margin: 0;
-            font-size: 13px;
-            letter-spacing: -0.1px;
-            color: #6d6e71;
+        }
+        li {
+            margin-right: 30px;
+            &:nth-last-of-type(1) {
+                margin-right: 0;
+            }
+            a {
+                font-size: 0;
+                color: $gray-500;
+                transition: 300ms ease-in-out color;
+
+                &:hover {
+                    color: $gray-300;
+                }
+
+                &::before {
+                    font-size: rem(18px);
+                }
+            }
+        }
+    }
+
+    .footer-copyright {
+        margin-top: 20px;
+        text-align: center;
+        p {
+            font-size: rem(12px);
+            color: $gray-500;
+            font-family: $primary-font-light;
+        }
+        @include media-breakpoint-up(md) {
+            text-align: left;
         }
     }
 }

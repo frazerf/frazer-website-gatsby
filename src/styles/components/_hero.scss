@@ -1,8 +1,11 @@
 .hero {
     &.full-image {
-        height: 100vh;
+        height: 90vh;
         width: 100%;
         position: relative;
+        @include media-breakpoint-up(md) {
+            height: 100vh;
+        }
         .media {
             height: 100%;
             width: 100%;
@@ -31,10 +34,10 @@
             left: 0;
             height: 100%;
             width: 100%;
-            padding-bottom: 75px;
             display: flex;
-            align-items: flex-end;
+            align-items: center;
             z-index: 2;
+            text-align: center;
             h1 {
                 margin-bottom: 20px;
             }
@@ -47,7 +50,11 @@
     &.headline {
         .content {
             margin-top: 120px;
-            margin-bottom: 70px;
+            margin-bottom: 30px;
+            @include media-breakpoint-up(md) {
+                margin-top: 120px;
+                margin-bottom: 70px;
+            }
             h5 {
                 margin: 0;
             }
@@ -55,9 +62,7 @@
                 margin: 20px 0;
             }
             .date {
-                font-size: 13px;
-                letter-spacing: 0.3px;
-                font-weight: 400;
+                
             }
         }
         .media {

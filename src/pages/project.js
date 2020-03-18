@@ -10,24 +10,24 @@ class ProjectIndex extends React.Component {
     return (
       <div className="animated fadeIn">
         <Helmet>
-          <body className="dark-header" />
+          <body className="dark-header listing" />
         </Helmet>
-        <div className="section small-bottom mob-spacer-top">
+        <div className="section hero-section mob-spacer-top">
           <div className="container">
             <div className="row">
-              <div className="col-md-8 col-12">
-                <h2>The life and times.</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+              <div className="col-12">
+                <div className="title gray-500">Success Stories</div>
+                <h2>Why tell you,<br/>when we can show you?</h2>
               </div>
             </div>
           </div>
         </div>
-        <div className="section light-grey small-top">
+        <div className="section small-top">
           <div className="container">
             <div className="row align-items-stretch">
               {posts.map(({ node }) => {
                 return (
-                <div className="col-12 col-md-4" key={node.slug}>
+                <div className="col-12 col-md-6 tiles" key={node.slug}>
                   <ProjectPreview project={node}></ProjectPreview>
                 </div>
                 )
@@ -51,7 +51,7 @@ export const pageQuery = graphql`
             slug
             createdAt(formatString: "Do MMMM YYYY")
             heroImage {
-              sizes(quality: 100, maxWidth: 400, maxHeight: 250) {
+              sizes(quality: 100, maxWidth: 400, maxHeight: 400) {
                 aspectRatio
                 src
                 srcSet

@@ -11,18 +11,23 @@ class Footer extends React.Component {
     <>
       <footer className="t-light">
         <div className="container">
-          <div className="row">
-            <div className="col-12">
-              {data.map((item, i) =>
-                <div key={item.id}>
-                  <h3><Link to={item.navigationLink}>{item.navigationTitle}</Link></h3>
-                </div>
-              )}
+          <div className="row footer-lets-talk">
+            <div className="col-12 col-md-6">
+              <h3>Looking for a developer?<br/><a href="/contact">Let's talk.</a></h3>
             </div>
           </div>
-          <div className="row footer-bottom">
-            <div className="col-6">
-              <ul className="socials left">
+          <div className="row">
+            <div className="col-12 col-md-6">
+              <ul className="footer-nav">
+                {data.map((item, i) =>
+                  <li key={item.id}>
+                    <Link to={item.navigationLink}>{item.navigationTitle}</Link>
+                  </li>
+                )}
+              </ul>
+            </div>
+            <div className="col-12 col-md-6">
+              <ul className="footer-socials">
                 <li>
                   <a href="https://www.facebook.com/frazer.findlater" rel="noopener noreferrer" target="_blank" className="icon-facebook">Facebook</a>
                 </li>
@@ -34,8 +39,10 @@ class Footer extends React.Component {
                 </li>
               </ul>
             </div>
-            <div className="col-6 text-right">
-              <p>&copy; Frazer Findlater</p>
+          </div>
+          <div className="row footer-copyright">
+            <div className="col-md-6 col-12">
+                <p>&copy; Frazer Findlater</p>
             </div>
           </div>
         </div>

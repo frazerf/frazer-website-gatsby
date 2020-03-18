@@ -6,14 +6,14 @@
     li {
         margin-right: 30px;
         &:nth-last-of-type(1) {
-        margin-right: 0;
+            margin-right: 0;
         }
         a {
         font-size: 0;
         color: white;
-        &::before {
-            font-size: 20px;
-        }
+            &::before {
+                font-size: 20px;
+            }
         }
     }
     &.left {

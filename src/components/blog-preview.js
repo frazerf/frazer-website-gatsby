@@ -5,15 +5,12 @@ import Img from 'gatsby-image'
 export default ({ blog }) => (
     <>
         <Link to={"blog/" + blog.slug}>
-            <div className="cards">
-                <div className="cards-inner">
-                    <Img sizes={blog.heroImage.sizes} />
-                    <div className="content">
-                        <h5>{blog.category}</h5>
-                        <h4>{blog.title}</h4>
-                        <p>{blog.leadin.childMarkdownRemark.excerpt}</p>
-                    </div>
-                </div>
+            <div className="image">
+                <Img sizes={blog.heroImage.sizes} />
+            </div>
+            <div className="content">
+                <h4 className="gray-300">{blog.category}</h4>
+                <div className="title">{blog.title}</div>
             </div>
         </Link>
     </>

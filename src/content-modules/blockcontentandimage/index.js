@@ -6,13 +6,13 @@ export default function BlockContentAndImage({image, content}) {
   return (
     <Reveal fraction={0.3} duration={2000} effect="fadeInUp">
       <div className="spacer">
-        <div class="container">
-          <div class="row d-flex align-items-center">
-            <div class="col-md-6 col-12">
+        <div className="container">
+          <div className="row d-flex align-items-center">
+            <div className="col-md-6 col-12">
               <div dangerouslySetInnerHTML={{__html:content.childMarkdownRemark.html}} />
             </div>
-            <div class="col-md-6 col-12">
-              <div class="image-block">
+            <div className="col-md-6 col-12">
+              <div className="image-block">
                 <Img sizes={image.sizes} />
               </div>
             </div>

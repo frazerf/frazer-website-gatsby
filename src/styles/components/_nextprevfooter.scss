@@ -1,0 +1,45 @@
+.nextprevfooter {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    .content {
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding-left: rem(40px);
+        padding-right: rem(40px);
+        h2, h3 {
+            margin-bottom: 0;
+        }
+        h4, h3, h2 {
+            position: relative;
+            z-index: 1;
+        }
+        &::after {
+            content: '';
+            background: rgba($color: #000000, $alpha: 0.3);
+            height: 100%;
+            position: absolute;
+            width: 100%;
+        }
+    }
+    .gatsby-image-wrapper {
+        height: 300px;
+        @include media-breakpoint-up(md) {
+            height: 400px;
+        }
+        transform: scale(1);
+        transition: 750ms ease-in-out transform;
+    }
+    &:hover {
+        .gatsby-image-wrapper {
+            transform: scale(1.05);
+        }
+    }
+}

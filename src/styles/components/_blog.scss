@@ -1,3 +1,7 @@
 .blog-leadin {
     margin-top: 60px;
+    margin-bottom: 40px;
+    @include media-breakpoint-up(md) {
+        margin-bottom: 100px;
+    }
 }

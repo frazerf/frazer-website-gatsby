@@ -4,11 +4,18 @@ import Flickity from 'react-flickity-component'
 import Link from 'gatsby-link'
 import Img from 'gatsby-image'
 import Reveal from 'react-reveal/Reveal';
+import Fade from 'react-reveal/Fade';
+import BlogPreview from '../components/blog-preview'
+import Helmet from 'react-helmet'
 
-const fade =
+import Portrait from '../images/portrait.jpg'
+
+/*eslint-disable */
+const fade = 
   typeof window !== "undefined"
     ? require("flickity-fade")
     : () => null
+/*eslint-enable */
 
 const flickityHeroOptions = {
   wrapAround: true,
@@ -20,21 +27,21 @@ const flickityHeroOptions = {
   fade: true
 }
 
-const flickityBlogOptions = {
-  pageDots: true,
-  cellAlign: 'left',
-}
-
 class Index extends React.Component {
 
   render() {
     const blogItem = this.props.data.allContentfulBlog.edges;
     const projectItem = this.props.data.allContentfulProject.edges;
     const logoSection = this.props.data.allContentfulLogoSection.edges;
-
+    const homepageSection = this.props.data.allContentfulHomePage.edges;
 
     return (
       <div className="animated fadeIn">
+
+        <Helmet>
+          <body className="home-page" />
+        </Helmet>
+
         <div className="carousel-slider--home_container t-light">
           <Flickity
             className={'carousel-slider--home'} // default ''
@@ -53,19 +60,13 @@ class Index extends React.Component {
                 </video>
               )}
               <div className="overlay"></div>
-              <div className="content">
+              <div className="content variation">
                 <div className="container">
                   <Link to={'/blog/' + blogItem[0].node.slug}>
                     <div className="row">
                       <div className="col-12 col-md-10">
                         <h5>{blogItem[0].node.category}</h5>
                         <h1>{blogItem[0].node.title}.</h1>
-                      </div>
-                    </div>
-                    <div className="row">
-                      <div className="col-12 col-md-8">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud</p>
-                        <p className="cta-arrow">Read more <svg className="i-arrow" viewBox="0 0 40 40"> <circle cx="20" cy="20" r="19"></circle> <line x1="12.5" y1="20" x2="26.5" y2="20"></line> <line x1="23.5" y1="15" x2="27.5" y2="20"></line> <line x1="23.5" y1="25" x2="27.5" y2="20"></line> </svg></p>
                       </div>
                     </div>
                   </Link>
@@ -87,15 +88,9 @@ class Index extends React.Component {
                 <div className="container">
                   <Link to={'/project/' + projectItem[0].node.slug}>
                     <div className="row">
-                    <div className="col-12 col-md-10">
+                    <div className="col-12 offset-md-1 col-md-10">
                         <h5>Case Study</h5>
                         <h1>{projectItem[0].node.title}.</h1>
-                      </div>
-                    </div>
-                    <div className="row">
-                      <div className="col-12 col-md-8">
-                        <div dangerouslySetInnerHTML={{__html:projectItem[0].node.leadin.childMarkdownRemark.html}} />
-                        <p className="cta-arrow">View project <svg className="i-arrow" viewBox="0 0 40 40"> <circle cx="20" cy="20" r="19"></circle> <line x1="12.5" y1="20" x2="26.5" y2="20"></line> <line x1="23.5" y1="15" x2="27.5" y2="20"></line> <line x1="23.5" y1="25" x2="27.5" y2="20"></line> </svg></p>
                       </div>
                     </div>
                   </Link>
@@ -113,19 +108,13 @@ class Index extends React.Component {
                 </video>
               )}
               <div className="overlay"></div>
-              <div className="content">
+              <div className="content variation">
                 <div className="container">
                   <Link to={'/blog/' + blogItem[1].node.slug}>
                     <div className="row">
                       <div className="col-12 col-md-10">
                         <h5>{blogItem[1].node.category}</h5>
                         <h1>{blogItem[1].node.title}.</h1>
-                      </div>
-                    </div>
-                    <div className="row">
-                      <div className="col-12 col-md-8">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud</p>
-                        <p className="cta-arrow">Read more <svg className="i-arrow" viewBox="0 0 40 40"> <circle cx="20" cy="20" r="19"></circle> <line x1="12.5" y1="20" x2="26.5" y2="20"></line> <line x1="23.5" y1="15" x2="27.5" y2="20"></line> <line x1="23.5" y1="25" x2="27.5" y2="20"></line> </svg></p>
                       </div>
                     </div>
                   </Link>
@@ -137,56 +126,27 @@ class Index extends React.Component {
         </div>
 
         <div className="section">
+          <Reveal fraction={0.3} duration={1000} effect="fadeInUp">
             <div className="container">
               <div className="row">
-              <div className="col-12 col-md-6">
-                  <h2>Hello!<br/><span>Lorem ipsum dolar est.<br/>Take a look around.</span></h2>
+                {/* <div className="col-12 col-md-6">
+                  <div dangerouslySetInnerHTML={{__html:homepageSection[0].node.aboutColumn1.childMarkdownRemark.html}} />
                 </div>
                 <div className="col-12 col-md-6">
-                  <p>Led not just by data-driven insight but by unrelenting curiosity, our inquisitive nature combined with strategic thinking and creative vision, makes us the ideal partner for forward thinking organisations.</p>
-                </div>
-              </div>
-            </div>
-     
-        </div>
-
-        <div className="section light-grey article-carousel">
-          <Reveal fraction={0.3} duration={2000} effect="fadeInUp">
-            <div className="container">
-              <div className="row align-items-end">
-                <div className="col-12 col-md-8">
-                  <h3>Snapshots of life.</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-                <div className="col-12 col-md-4 text-right">
-                  <p className="cta-arrow"><Link to="/blog/">View all posts <svg className="i-arrow" viewBox="0 0 40 40"> <circle cx="20" cy="20" r="19"></circle> <line x1="12.5" y1="20" x2="26.5" y2="20"></line> <line x1="23.5" y1="15" x2="27.5" y2="20"></line> <line x1="23.5" y1="25" x2="27.5" y2="20"></line> </svg></Link></p>
-                </div>
-              </div>
-
-              <div className="row">
+                  <div dangerouslySetInnerHTML={{__html:homepageSection[0].node.aboutColumn2.childMarkdownRemark.html}} />
+                </div> */}
                 <div className="col-12">
-                  <div className="carousel-slider--blog_container">
-                    <Flickity
-                      className={'carousel-slider--blog'} // default ''
-                      elementType={'div'} // default 'div'
-                      options={flickityBlogOptions} // takes flickity options {}
-                      disableImagesLoaded={false} // default false
-                    >
-                      {blogItem.map((i, id) =>
-                      <Link key={id} to={"blog/" + i.node.slug} className="slide">
-                        <div className="cards">
-                          <div className="cards-inner">
-                            <Img sizes={i.node.heroImage.sizes} />
-                            <div className="content">
-                              <h5>{i.node.category}</h5>
-                              <h4>{i.node.title}</h4>
-                              <p>{i.node.leadin.childMarkdownRemark.excerpt}</p>
-                            </div>
-                          </div>
-                        </div>
-                      </Link>
-                      )}
-                    </Flickity>
+                  <div className="eeeeep">
+                    <div className="content">
+                      <div className="next">
+                        <div className="title gray-500">About yours truly</div>
+                        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
+                      </div>
+                    </div>
+                    <div className="image">
+                      <img src={Portrait} alt="" />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -195,31 +155,58 @@ class Index extends React.Component {
         </div>
 
         <div className="section">
-          <Reveal fraction={0.3} duration={2000} effect="fadeInUp">
-            <div className="container">
-              <div className="row">
-                <div className="offset-md-2 col-12 col-md-8 text-center">
-                  <h3>{logoSection[0].node.title}</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-              </div>
-
-              <div className="logo-container">
-                {logoSection[0].node.companyLogos.map((i, id) =>
-                  <div className="logo-item" key={id}>
-                    {i.link !== null &&
-                    <Link to={'/project/' + i.link}>
-                      <img src={i.image.fluid.src} alt={i.link + ' logo'}/>
-                    </Link>
-                    }
-                    {i.link === null &&
-                      <img src={i.image.fluid.src} alt={i.link + ' logo'}/>
-                    }
-                  </div>
-                )}
+          <div className="container">
+            <div className="row">
+              <div className="col-12">
+                <div className="title gray-500">The life and times</div>
+                <h3>What I've been up to</h3>
               </div>
             </div>
-          </Reveal>
+            <div className="row align-items-stretch">
+              {blogItem.map(({ node }) => {
+                return (
+                <div className="col-12 col-md-6 tiles" key={node.slug}>
+                  <BlogPreview blog={node}></BlogPreview>
+                </div>
+                )
+              })}
+            </div>
+          </div>
+        </div>
+
+        <div className="section">
+          <div className="container">
+
+            <div className="row">
+              <div className="offset-md-2 col-12 col-md-8 text-center">
+                <div dangerouslySetInnerHTML={{__html:homepageSection[0].node.brandsColumn.childMarkdownRemark.html}} />
+              </div>
+            </div>
+
+            <div className="logo-container">
+            <Fade bottom cascade>
+              {logoSection[0].node.companyLogos.map((i, id) =>
+                <div className="logo-item" key={id}>
+                  {i.link !== null &&
+                  <Link to={'/project/' + i.link}>
+                    <img src={i.image.fluid.src} alt={i.link + ' logo'}/>
+                  </Link>
+                  }
+                  {i.link === null &&
+                    <img src={i.image.fluid.src} alt={i.link + ' logo'}/>
+                  }
+                </div>
+              )}
+              </Fade>
+            </div>
+
+            <div className="row">
+              <div className="offset-md-2 col-12 col-md-8 text-center">
+                <Link className="cta" to="/project/">View all projects</Link>
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
     );
@@ -230,7 +217,7 @@ export default Index
 
 export const pageQuery = graphql`
   query pageQuery {
-    allContentfulBlog(sort: { fields: [updatedAt], order: DESC } limit: 6) {
+    allContentfulBlog(sort: { fields: [updatedAt], order: DESC } limit: 4) {
       edges {
         node {
           title
@@ -316,6 +303,26 @@ export const pageQuery = graphql`
         }
       }
     }
-
+    allContentfulHomePage {
+      edges {
+        node {
+          aboutColumn1 {
+            childMarkdownRemark {
+              html
+            }
+          }
+          aboutColumn2 {
+            childMarkdownRemark {
+              html
+            }
+          }
+          brandsColumn {
+            childMarkdownRemark {
+              html
+            }
+          }
+        }
+      }
+    }
   }
 `

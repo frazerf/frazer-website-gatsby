@@ -39,44 +39,39 @@ class Header extends React.Component {
     <>
       <div className="header">
         <Headroom>
-          <div className="container">
-            <div className="header-container">
-              <Link className="logo" to={`/`}>logo</Link>
-              <Menu
-                right
-                bodyClassName={ "menu-open" }
-                isOpen={this.state.menuOpen}
-                customCrossIcon={ <img src={MenuCross} alt="Menu exit" /> }
-                onStateChange={(state) => this.handleStateChange(state)}
-              >
-                <div className="burger-menu">
-                  <ul>
-                    {data.map((item, i) =>
-                      <li key={item.id}>
-                        <h2><Link onClick={() => this.closeMenu()} to={item.navigationLink}>{item.navigationTitle}</Link></h2>
-                      </li>
-                    )}
-                    <li>
-                      <h2><Link onClick={() => this.closeMenu()} to="/contact/">Contact</Link></h2>
+          <div className="header-container">
+            <Link className="logo" to={`/`}>logo</Link>
+            <Menu
+              right
+              bodyClassName={ "menu-open" }
+              isOpen={this.state.menuOpen}
+              customCrossIcon={ <img src={MenuCross} alt="Menu exit" /> }
+              onStateChange={(state) => this.handleStateChange(state)}
+            >
+              <div className="burger-menu">
+                <ul>
+                  {data.map((item, i) =>
+                    <li key={item.id}>
+                      <h2><Link onClick={() => this.closeMenu()} to={item.navigationLink}>{item.navigationTitle}</Link></h2>
                     </li>
-                  </ul>
-                </div>
+                  )}
+                </ul>
+              </div>
 
-                <div className="navigation-social">
-                  <ul className="socials">
-                    <li>
-                      <a href="https://www.facebook.com/frazer.findlater" rel="noopener noreferrer" target="_blank" className="icon-facebook">Facebook</a>
-                    </li>
-                    <li>
-                      <a href="https://www.instagram.com/frazerf/" rel="noopener noreferrer" target="_blank" className="icon-instagram">Instagram</a>
-                    </li>
-                    <li>
-                      <a href="https://www.linkedin.com/in/frazer-findlater-b6116335/" rel="noopener noreferrer" target="_blank" className="icon-linkedin2">Linkedin</a>
-                    </li>
-                  </ul>
-                </div>
-              </Menu>
-            </div>
+              <div className="navigation-social">
+                <ul className="socials">
+                  <li>
+                    <a href="https://www.facebook.com/frazer.findlater" rel="noopener noreferrer" target="_blank" className="icon-facebook">Facebook</a>
+                  </li>
+                  <li>
+                    <a href="https://www.instagram.com/frazerf/" rel="noopener noreferrer" target="_blank" className="icon-instagram">Instagram</a>
+                  </li>
+                  <li>
+                    <a href="https://www.linkedin.com/in/frazer-findlater-b6116335/" rel="noopener noreferrer" target="_blank" className="icon-linkedin2">Linkedin</a>
+                  </li>
+                </ul>
+              </div>
+            </Menu>
           </div>
         </Headroom>
       </div>

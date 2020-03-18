@@ -1,11 +1,8 @@
 form {
-    &.contact {
-        margin-top: 100px;
-    }
     input, textarea {
         display: block;
         width: 100%;
-        margin-bottom: 40px;
+        margin-bottom: 60px;
         background: transparent;
         border: none;
         border-bottom: 2px solid rgba(0, 0, 0, 0.1);
@@ -13,6 +10,7 @@ form {
         transition: 300ms ease-in-out all;
         border-radius: 0;
         -webkit-appearance: none;
+        font-size: rem(18px);
         &:focus {
             border-bottom: 2px solid rgba(0, 0, 0, 1);
             outline: 0;

@@ -2,8 +2,8 @@ import React from 'react';
 import { graphql } from 'gatsby'
 import Proptypes from 'prop-types';
 import Img from 'gatsby-image'
+import Helmet from 'react-helmet'
 import ContentModules from '../content-modules'
-import Reveal from 'react-reveal/Reveal';
 import Link from 'gatsby-link'
 
 const ProjectPost = ({ pageContext, data }) => {
@@ -14,14 +14,17 @@ const ProjectPost = ({ pageContext, data }) => {
     blocks,
     title,
   } = data.contentfulProject
-  const { next } = pageContext
+  const { next, prev } = pageContext
 
   return (
     <div className="animated fadeIn">
+      <Helmet>
+        <body className="project-page" />
+      </Helmet>
       <div className="hero full-image animated fadeInUp">
         {heroVideo === null && (
           <div className="media">
-            <Img fluid={heroImage.sizes} />
+            <Img sizes={heroImage.sizes} />
           </div>
         )}
         {heroVideo !== null && (
@@ -35,9 +38,9 @@ const ProjectPost = ({ pageContext, data }) => {
         <div className="content t-light">
           <div className="container">
             <div className="row">
-              <div className="col-12 col-md-10">
-                <h5>Case Study</h5>
-                <h1>{title}</h1>
+              <div className="col-12">
+                <div className="title">Case Study</div>
+                <h1 className="large">{title}</h1>
               </div>
             </div>
           </div>
@@ -48,20 +51,30 @@ const ProjectPost = ({ pageContext, data }) => {
         {blocks && <ContentModules blocks={blocks} />}
       </div>
 
-      {next &&
-        <Reveal fraction={0.3} duration={2000} effect="fadeInUp">
-          <div className="section-next">
-            <div className="container">
-              <div className="row">
-                <div className="col-12">
-                  <h4>Next Article</h4>
-                  <h2><Link to={"project/" + next.slug}>{next.title}</Link></h2>
-                  <p><Link className="cta-arrow" to={"project/" + next.slug}>Check it out <svg className="i-arrow" viewBox="0 0 40 40"> <circle cx="20" cy="20" r="19"></circle> <line x1="12.5" y1="20" x2="26.5" y2="20"></line> <line x1="23.5" y1="15" x2="27.5" y2="20"></line> <line x1="23.5" y1="25" x2="27.5" y2="20"></line></svg></Link></p>
-                </div>
+      {next 
+        ? <div className="section-next">
+          <div className="container-large">
+            <Link to={"project/" + next.slug} className="nextprevfooter">
+              <div className="content t-light">
+                <h4>Next Project</h4>
+                <h2>{next.title}</h2>
               </div>
-            </div>
+              <Img sizes={next.heroImage.sizes} />
+            </Link>
           </div>
-        </Reveal>
+        </div>
+        
+        : <div className="section-next">
+          <div className="container-large">
+            <Link to={"project/" + prev.slug} className="nextprevfooter">
+              <div className="content t-light">
+                <h4>Back to previous Project?</h4>
+                <h2>{prev.title}</h2>
+              </div>
+              <Img sizes={prev.heroImage.sizes} />
+            </Link>
+          </div>
+        </div>
       }
     </div>
   )
@@ -83,8 +96,8 @@ export const pageQuery = graphql`
       createdAt(formatString: "Do MMMM YYYY")
       heroImage {
         sizes(quality: 100, maxWidth: 1800) {
-          aspectRatio
           src
+          aspectRatio
           srcSet
           srcWebp
           srcSetWebp
@@ -205,6 +218,34 @@ export const pageQuery = graphql`
             }
             image {
               sizes(quality: 100, maxWidth: 1800) {
+                aspectRatio
+                src
+                srcSet
+                srcWebp
+                srcSetWebp
+                sizes
+              }
+            }
+          }
+          ... on ContentfulBlockColourImage {
+            backgroundColour
+            image {
+              sizes(quality: 100, maxWidth: 1800) {
+                srcSet
+                aspectRatio
+                src
+                srcWebp
+                srcSetWebp
+                sizes
+              }
+            }
+            caption
+          }
+          ... on ContentfulBlockColourCarousel {
+            backgroundColour            
+            imagesColour {
+              id
+              sizes(quality: 100, maxHeight: 600) {
                 aspectRatio
                 src
                 srcSet

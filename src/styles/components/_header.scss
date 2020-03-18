@@ -6,13 +6,21 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-
+        max-width: 90%;
+        margin: 0 auto;
     }
 
     .headroom {
         padding: 15px 0;
         &--pinned {
-            background: #131313;
+            background: $white;
+            box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
+            .logo {
+                color: black;
+            }
+            .bm-burger-bars {
+                background: $gray-900;
+            }
         }
         &--unfixed {
             position: fixed !important;
@@ -24,7 +32,7 @@
             }
             .bm-burger-bars {
                 .dark-header & {
-                    background: #131313;
+                    background: $gray-900;
                 }
             }
         }

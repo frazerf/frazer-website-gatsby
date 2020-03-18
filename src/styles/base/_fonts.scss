@@ -1,26 +1,18 @@
-@import url('https://fonts.googleapis.com/css?family=Saira+Condensed:600&display=swap');
+@import url('https://fonts.googleapis.com/css?family=PT+Serif&display=swap');
 
 @font-face {
-  font-family:"Manrope3 Light";
-  src:url("../fonts/Manrope3 Light 300.woff2") format("woff2"),
-      url("../fonts/Manrope3 Light 300.woff") format("woff"),
-      url("../fonts/Manrope3 Light 300.otf") format("opentype");
+  font-family:"Circular";
+  src:url("../fonts/CircularStd-Book.woff2") format("woff2"),
+      url("../fonts/CircularStd-Book.woff") format("woff"),
+      url("../fonts/CircularStd-Book.otf") format("opentype");
   font-style:normal;font-weight:400;
 }
 
 @font-face {
-  font-family:"Manrope3 Bold";
-  src:url("../fonts/Manrope3 Bold 700.woff2") format("woff2"),
-      url("../fonts/Manrope3 Bold 700.woff") format("woff"),
-      url("../fonts/Manrope3 Bold 700.otf") format("opentype");
-  font-style:normal;font-weight:400;
-}
-
-@font-face {
-  font-family:"Manrope3 Extra Bold";
-  src:url("../fonts/Manrope3 ExtraBold 800.woff2") format("woff2"),
-      url("../fonts/Manrope3 ExtraBold 800.woff") format("woff"),
-      url("../fonts/Manrope3 ExtraBold 800.otf") format("opentype");
+  font-family:"Circular Bold";
+  src:url("../fonts/CircularStd-Medium.woff2") format("woff2"),
+      url("../fonts/CircularStd-Medium.woff") format("woff"),
+      url("../fonts/CircularStd-Medium.otf") format("opentype");
   font-style:normal;font-weight:400;
 }
 
@@ -34,6 +26,16 @@
   font-weight: normal;
   font-style: normal;
   font-display: block;
+}
+
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return #{$remSize}rem;
+}
+
+@mixin fontSize($size) {
+  font-size: $size; //Fallback in px
+  font-size: calculateRem($size);
 }
 
 [class^="icon-"], [class*=" icon-"] {
@@ -68,5 +70,5 @@
 }
 
 .icon-hammer {
-  margin-bottom: 10px;
+  margin-bottom: rem(10px);
 }

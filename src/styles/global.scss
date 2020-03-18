@@ -3,6 +3,8 @@
 @import "~bootstrap/scss/bootstrap";
 @import "~sass-rem/_rem.scss";
 @import "~flickity/css/flickity.css";
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
 
 @import 'base/_normalize.scss';
 @import 'base/_fonts.scss';
@@ -13,6 +15,7 @@
 @import 'modules/_animate.scss';
 
 @import 'components/_forms.scss';
+@import 'components/_tiles.scss';
 @import 'components/_header.scss';
 @import 'components/_footer.scss';
 @import 'components/_hero.scss';
@@ -30,5 +33,6 @@
 @import 'components/_cta.scss';
 @import 'components/_icons.scss';
 @import 'components/_content.scss';
+@import 'components/_nextprevfooter.scss';
 
 @import 'components/_nav.scss';

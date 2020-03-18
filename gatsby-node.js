@@ -17,6 +17,30 @@ exports.createPages = ({graphql, actions}) => {
               next {
                 title
                 slug
+                heroImage {
+                  sizes(quality: 100) {
+                    aspectRatio
+                    src
+                    srcSet
+                    srcWebp
+                    srcSetWebp
+                    sizes
+                  }
+                }
+              }
+              previous {
+                title
+                slug
+                heroImage {
+                  sizes(quality: 100) {
+                    aspectRatio
+                    src
+                    srcSet
+                    srcWebp
+                    srcSetWebp
+                    sizes
+                  }
+                }
               }
             }
           }
@@ -29,6 +53,30 @@ exports.createPages = ({graphql, actions}) => {
               next {
                 title
                 slug
+                heroImage {
+                  sizes(quality: 100) {
+                    aspectRatio
+                    src
+                    srcSet
+                    srcWebp
+                    srcSetWebp
+                    sizes
+                  }
+                }
+              }
+              previous {
+                title
+                slug
+                heroImage {
+                  sizes(quality: 100) {
+                    aspectRatio
+                    src
+                    srcSet
+                    srcWebp
+                    srcSetWebp
+                    sizes
+                  }
+                }
               }
             }
           }
@@ -43,7 +91,8 @@ exports.createPages = ({graphql, actions}) => {
             component: blogPostTemplate,
             context: {
               slug: edge.node.slug,
-              next: edge.next
+              next: edge.next,
+              prev: edge.previous
             }
           })
         })
@@ -53,7 +102,8 @@ exports.createPages = ({graphql, actions}) => {
             component: projectPostTemplate,
             context: {
               slug: edge.node.slug,
-              next: edge.next
+              next: edge.next,
+              prev: edge.previous
             }
           })
         })

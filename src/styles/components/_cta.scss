@@ -1,22 +1,18 @@
 .cta {
-    &-arrow {
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        svg {
-            position: relative;
-            margin-left: 10px;
-            height: 30px;
-            width: 30px;
-            transition: 300ms ease-in-out transform;
-        }
-        a {
-            color: black;
-        }
-        &:hover {
-            svg {
-                transform: translateX(5px);
-            }
-        }
+    background: $gray-900;
+    color: white;
+    padding: 20px 40px;
+    border-radius: 9999px;
+    display: inline-block;
+    @include fontSize(20px);
+    opacity: 1;
+    transition: 300ms ease-in-out opacity;
+    .t-light & {
+        border: 2px solid white;
+        background: transparent;
+    }
+    &:hover {
+        opacity: 0.85;
+        color: $white;
     }
 }
