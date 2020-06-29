@@ -16,8 +16,8 @@ class ProjectIndex extends React.Component {
           <div className="container">
             <div className="row">
               <div className="col-12">
-                <div className="title gray-500">Success Stories</div>
-                <h2>Why tell you,<br/>when we can show you?</h2>
+                <div className="title gray-500">My work</div>
+                <h2>Case studies,<br/>side projects &amp; learnings.</h2>
               </div>
             </div>
           </div>

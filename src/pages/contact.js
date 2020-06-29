@@ -10,8 +10,8 @@ const Contact = () => (
       <div className="container">
         <div className="row">
           <div className="col-12">
-            <div className="title gray-500">Success Stories</div>
-            <h2>Why tell you,<br/>when we can show you?</h2>
+            <div className="title gray-500">Hey there!</div>
+            <h2>Wanna get in touch?<br/>Drop me a line below.</h2>
           </div>
         </div>
       </div>

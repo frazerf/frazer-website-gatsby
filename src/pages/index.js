@@ -140,8 +140,8 @@ class Index extends React.Component {
                     <div className="content">
                       <div className="next">
                         <div className="title gray-500">About yours truly</div>
-                        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
+                        <h3>Just your typical outdoor loving, Notorious B.I.G listening, pizza <strike>making</strike> eating boy from NZ.</h3>
+                        <p>Welcome to your one-stop-shop for everything Frazer Findlater related. I don't take myself too seriously and that's goes for my site as well. So come in and take a glimpse at my life and my work.</p>
                       </div>
                     </div>
                     <div className="image">
@@ -158,11 +158,11 @@ class Index extends React.Component {
           <div className="container">
             <div className="row">
               <div className="col-12">
-                <div className="title gray-500">The life and times</div>
-                <h3>What I've been up to</h3>
+                <div className="title gray-500">Life &amp; times</div>
+                <h3>A snapshot of life.</h3>
               </div>
             </div>
-            <div className="row align-items-stretch">
+            <div className="row align-items-stretch blog-container--home">
               {blogItem.map(({ node }) => {
                 return (
                 <div className="col-12 col-md-6 tiles" key={node.slug}>

@@ -5,3 +5,9 @@
         margin-bottom: 100px;
     }
 }
+
+.blog-container--home {
+    @include media-breakpoint-up(md) {
+        margin-top: 30px;
+    }
+}
