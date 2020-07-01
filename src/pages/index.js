@@ -40,6 +40,7 @@ class Index extends React.Component {
 
         <Helmet>
           <body className="home-page" />
+          <title>Home | 🍕 Frazer Findlater</title>
         </Helmet>
 
         <div className="carousel-slider--home_container t-light">

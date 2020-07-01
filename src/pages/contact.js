@@ -5,6 +5,7 @@ const Contact = () => (
   <>
     <Helmet>
       <body className="dark-header" />
+      <title>Contact | 🍕 Frazer Findlater</title>
     </Helmet>
     <div className="section hero-section mob-spacer-top">
       <div className="container">

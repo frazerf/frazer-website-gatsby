@@ -20,6 +20,7 @@ const ProjectPost = ({ pageContext, data }) => {
     <div className="animated fadeIn">
       <Helmet>
         <body className="project-page" />
+        <title>{title} | 🍕 Frazer Findlater</title>
       </Helmet>
       <div className="hero full-image animated fadeInUp">
         {heroVideo === null && (

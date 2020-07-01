@@ -11,6 +11,7 @@ class BlogIndex extends React.Component {
       <div className="animated fadeIn">
         <Helmet>
           <body className="dark-header listing" />
+          <title>Life | 🍕 Frazer Findlater</title>
         </Helmet>
         <div className="section hero-section mob-spacer-top">
           <div className="container">

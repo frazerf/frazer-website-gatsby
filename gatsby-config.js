@@ -2,7 +2,7 @@ const path = require(`path`)
 
 module.exports = {
   siteMetadata: {
-    title: '🌴 Woop!',
+    title: '🍕 Frazer Findlater',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
