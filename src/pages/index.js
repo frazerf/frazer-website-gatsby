@@ -256,7 +256,7 @@ export default Index
 
 export const pageQuery = graphql`
   query pageQuery {
-    allContentfulBlog(sort: { fields: [updatedAt], order: DESC }, limit: 2) {
+    allContentfulBlog(sort: { fields: [createdAt], order: DESC }, limit: 2) {
       edges {
         node {
           title

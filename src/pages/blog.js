@@ -5,8 +5,8 @@ import BlogPreview from '../components/blog-preview'
 
 class BlogIndex extends React.Component {
   render() {
-    const posts = this.props.data.allContentfulBlog.edges;
-    
+    const posts = this.props.data.allContentfulBlog.edges
+
     return (
       <div className="animated fadeIn">
         <Helmet>
@@ -18,7 +18,11 @@ class BlogIndex extends React.Component {
             <div className="row">
               <div className="col-12">
                 <div className="title gray-500">Life &amp; Times</div>
-                <h2>Mostly photos.<br/>Some words if you're lucky...</h2>
+                <h2>
+                  Mostly photos.
+                  <br />
+                  Some words if you're lucky...
+                </h2>
               </div>
             </div>
           </div>
@@ -28,9 +32,9 @@ class BlogIndex extends React.Component {
             <div className="row align-items-stretch">
               {posts.map(({ node }) => {
                 return (
-                <div className="col-12 col-md-6 tiles" key={node.slug}>
-                  <BlogPreview blog={node}></BlogPreview>
-                </div>
+                  <div className="col-12 col-md-6 tiles" key={node.slug}>
+                    <BlogPreview blog={node} />
+                  </div>
                 )
               })}
             </div>
