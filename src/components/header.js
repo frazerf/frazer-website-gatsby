@@ -40,7 +40,7 @@ class Header extends React.Component {
       <div className="header">
         <Headroom>
           <div className="header-container">
-            <Link className="logo" to={`/`}>ff.</Link>
+            <Link className="logo" to={`/`}>frazer.f</Link>
             <Menu
               right
               bodyClassName={ "menu-open" }

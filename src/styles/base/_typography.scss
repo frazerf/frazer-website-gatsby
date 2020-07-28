@@ -173,7 +173,7 @@ a {
   }
 }
 
-.text h3, p {
+p {
   a {
     text-decoration: none !important;
     position: relative;
@@ -203,6 +203,17 @@ a {
       &:after {
         width: 100%;
       }
+    }
+  }
+}
+
+.text h3 {
+  a {
+    border-bottom: 1px solid rgba($color: #000000, $alpha: 0.3);
+    color: black;
+    transition: 300ms ease-in-out;
+    &:hover {
+      border-bottom: 1px solid rgba($color: #000000, $alpha: 1.0);
     }
   }
 }

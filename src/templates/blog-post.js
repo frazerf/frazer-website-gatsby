@@ -1,11 +1,11 @@
-import React from 'react';
+import React from 'react'
 import { graphql } from 'gatsby'
-import Proptypes from 'prop-types';
+import Proptypes from 'prop-types'
 import Img from 'gatsby-image'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import ContentModules from '../content-modules'
-import Reveal from 'react-reveal/Reveal';
+import Reveal from 'react-reveal/Reveal'
 
 const BlogPost = ({ pageContext, data }) => {
   const {
@@ -13,8 +13,9 @@ const BlogPost = ({ pageContext, data }) => {
     category,
     createdAt,
     heroImage,
+    caption,
     blocks,
-    leadin
+    leadin,
   } = data.contentfulBlog
   const { next, prev } = pageContext
 
@@ -40,15 +41,17 @@ const BlogPost = ({ pageContext, data }) => {
           <div className="media">
             <Img fluid={heroImage.sizes} />
           </div>
-          <div className="container">
-            <div className="row">
-              <div className="col-12">
-                <div className="image-caption">
-                  <p className="caption">In reimagining the space, Virgil Abloh tapped local artist Max Sansing to create a mural on the main wall, adding a stylistic energy to the gym.</p>
+          {caption !== null && (
+            <div className="container">
+              <div className="row">
+                <div className="col-12">
+                  <div className="image-caption">
+                    <p className="caption">{caption}</p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
       <Reveal fraction={0.3} duration={2000} effect="fadeInUp">
@@ -56,7 +59,11 @@ const BlogPost = ({ pageContext, data }) => {
           <div className="container-main">
             <div className="row">
               <div className="col-12">
-                <div dangerouslySetInnerHTML={{ __html: leadin.childMarkdownRemark.html }} />
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: leadin.childMarkdownRemark.html,
+                  }}
+                />
               </div>
             </div>
           </div>
@@ -64,10 +71,16 @@ const BlogPost = ({ pageContext, data }) => {
       </Reveal>
       {blocks && <ContentModules blocks={blocks} />}
 
-      {next
-        ? <div className="section-next">
+      <div class="three-dots">
+        <span />
+        <span />
+        <span />
+      </div>
+
+      {next ? (
+        <div className="section-next">
           <div className="container-large">
-            <Link to={"blog/" + next.slug} className="nextprevfooter">
+            <Link to={'blog/' + next.slug} className="nextprevfooter">
               <div className="content t-light">
                 <h4>Next Article</h4>
                 <h3>{next.title}</h3>
@@ -76,10 +89,10 @@ const BlogPost = ({ pageContext, data }) => {
             </Link>
           </div>
         </div>
-
-        : <div className="section-next">
+      ) : (
+        <div className="section-next">
           <div className="container-large">
-            <Link to={"blog/" + prev.slug} className="nextprevfooter">
+            <Link to={'blog/' + prev.slug} className="nextprevfooter">
               <div className="content t-light">
                 <h4>Previous Article</h4>
                 <h3>{prev.title}</h3>
@@ -88,26 +101,26 @@ const BlogPost = ({ pageContext, data }) => {
             </Link>
           </div>
         </div>
-      }
-
+      )}
     </div>
   )
 }
 
 BlogPost.proptypes = {
-  data: Proptypes.object.isRequired
+  data: Proptypes.object.isRequired,
 }
 
-export default BlogPost;
+export default BlogPost
 
 export const pageQuery = graphql`
   query blogPostQuery($slug: String!) {
-    contentfulBlog(slug: {eq: $slug}) {
+    contentfulBlog(slug: { eq: $slug }) {
       id
       title
       slug
       category
       createdAt(formatString: "Do MMMM YYYY")
+      caption
       leadin {
         childMarkdownRemark {
           id
@@ -221,7 +234,7 @@ export const pageQuery = graphql`
             caption
           }
           ... on ContentfulBlockColourCarousel {
-            backgroundColour            
+            backgroundColour
             imagesColour {
               id
               sizes(quality: 100, maxWidth: 1800) {

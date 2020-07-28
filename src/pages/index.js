@@ -3,18 +3,16 @@ import { graphql } from 'gatsby'
 import Flickity from 'react-flickity-component'
 import Link from 'gatsby-link'
 import Img from 'gatsby-image'
-import Reveal from 'react-reveal/Reveal';
-import Fade from 'react-reveal/Fade';
+import Reveal from 'react-reveal/Reveal'
+import Fade from 'react-reveal/Fade'
 import BlogPreview from '../components/blog-preview'
 import Helmet from 'react-helmet'
 
 import Portrait from '../images/portrait.jpg'
 
 /*eslint-disable */
-const fade = 
-  typeof window !== "undefined"
-    ? require("flickity-fade")
-    : () => null
+const fade =
+  typeof window !== 'undefined' ? require('flickity-fade') : () => null
 /*eslint-enable */
 
 const flickityHeroOptions = {
@@ -24,20 +22,18 @@ const flickityHeroOptions = {
   pauseAutoPlayOnHover: false,
   pageDots: true,
   prevNextButtons: false,
-  fade: true
+  fade: true,
 }
 
 class Index extends React.Component {
-
   render() {
-    const blogItem = this.props.data.allContentfulBlog.edges;
-    const projectItem = this.props.data.allContentfulProject.edges;
-    const logoSection = this.props.data.allContentfulLogoSection.edges;
-    const homepageSection = this.props.data.allContentfulHomePage.edges;
+    const blogItem = this.props.data.allContentfulBlog.edges
+    const projectItem = this.props.data.allContentfulProject.edges
+    const logoSection = this.props.data.allContentfulLogoSection.edges
+    const homepageSection = this.props.data.allContentfulHomePage.edges
 
     return (
       <div className="animated fadeIn">
-
         <Helmet>
           <body className="home-page" />
           <title>Home | 🍕 Frazer Findlater</title>
@@ -50,24 +46,33 @@ class Index extends React.Component {
             options={flickityHeroOptions} // takes flickity options {}
             disableImagesLoaded={true} // default false
           >
-
             <div className="slide">
               {blogItem[0].node.heroVideo === null && (
                 <Img sizes={blogItem[0].node.heroImage.sizes} />
               )}
               {blogItem[0].node.heroVideo !== null && (
-                <video autoPlay={true} loop={true} playsInline={true} muted={true} controls={false} poster={blogItem[0].node.heroImage.sizes.src}>
-                  <source src={blogItem[0].node.heroVideo.file.url} type="video/mp4" />
+                <video
+                  autoPlay={true}
+                  loop={true}
+                  playsInline={true}
+                  muted={true}
+                  controls={false}
+                  poster={blogItem[0].node.heroImage.sizes.src}
+                >
+                  <source
+                    src={blogItem[0].node.heroVideo.file.url}
+                    type="video/mp4"
+                  />
                 </video>
               )}
-              <div className="overlay"></div>
+              <div className="overlay" />
               <div className="content variation">
                 <div className="container">
                   <Link to={'/blog/' + blogItem[0].node.slug}>
                     <div className="row">
                       <div className="col-12 col-md-10">
                         <h5>{blogItem[0].node.category}</h5>
-                        <h1>{blogItem[0].node.title}.</h1>
+                        <h1>{blogItem[0].node.title}</h1>
                       </div>
                     </div>
                   </Link>
@@ -80,18 +85,28 @@ class Index extends React.Component {
                 <Img sizes={projectItem[0].node.heroImage.sizes} />
               )}
               {projectItem[0].node.heroVideo !== null && (
-                <video autoPlay={true} loop={true} playsInline={true} muted={true} controls={false} poster={projectItem[0].node.heroImage.sizes.src}>
-                  <source src={projectItem[0].node.heroVideo.file.url} type="video/mp4" />
+                <video
+                  autoPlay={true}
+                  loop={true}
+                  playsInline={true}
+                  muted={true}
+                  controls={false}
+                  poster={projectItem[0].node.heroImage.sizes.src}
+                >
+                  <source
+                    src={projectItem[0].node.heroVideo.file.url}
+                    type="video/mp4"
+                  />
                 </video>
               )}
-              <div className="overlay"></div>
+              <div className="overlay" />
               <div className="content">
                 <div className="container">
                   <Link to={'/project/' + projectItem[0].node.slug}>
                     <div className="row">
-                    <div className="col-12 offset-md-1 col-md-10">
+                      <div className="col-12 offset-md-1 col-md-10">
                         <h5>Case Study</h5>
-                        <h1>{projectItem[0].node.title}.</h1>
+                        <h1>{projectItem[0].node.title}</h1>
                       </div>
                     </div>
                   </Link>
@@ -104,25 +119,34 @@ class Index extends React.Component {
                 <Img sizes={blogItem[1].node.heroImage.sizes} />
               )}
               {blogItem[1].node.heroVideo !== null && (
-                <video autoPlay={true} loop={true} playsInline={true} muted={true} controls={false} poster={blogItem[1].node.heroImage.sizes.src}>
-                  <source src={blogItem[1].node.heroVideo.file.url} type="video/mp4" />
+                <video
+                  autoPlay={true}
+                  loop={true}
+                  playsInline={true}
+                  muted={true}
+                  controls={false}
+                  poster={blogItem[1].node.heroImage.sizes.src}
+                >
+                  <source
+                    src={blogItem[1].node.heroVideo.file.url}
+                    type="video/mp4"
+                  />
                 </video>
               )}
-              <div className="overlay"></div>
+              <div className="overlay" />
               <div className="content variation">
                 <div className="container">
                   <Link to={'/blog/' + blogItem[1].node.slug}>
                     <div className="row">
                       <div className="col-12 col-md-10">
                         <h5>{blogItem[1].node.category}</h5>
-                        <h1>{blogItem[1].node.title}.</h1>
+                        <h1>{blogItem[1].node.title}</h1>
                       </div>
                     </div>
                   </Link>
                 </div>
               </div>
             </div>
-
           </Flickity>
         </div>
 
@@ -141,8 +165,16 @@ class Index extends React.Component {
                     <div className="content">
                       <div className="next">
                         <div className="title gray-500">About yours truly</div>
-                        <h3>Just your typical outdoor loving, Notorious B.I.G listening, pizza <strike>making</strike> eating boy from NZ.</h3>
-                        <p>Welcome to your one-stop-shop for everything Frazer Findlater related. I don't take myself too seriously and that's goes for my site as well. So come in and take a glimpse at my life and my work.</p>
+                        <h3>
+                          Just your typical, idea conjuring, outside-the-box
+                          thinking, Notorious B.I.G listening, boy from NZ.
+                        </h3>
+                        <p>
+                          Welcome to your one-stop-shop for everything Frazer
+                          Findlater related. I don't take myself too seriously
+                          and that's goes for my site as well. So come in and
+                          take a glimpse at my life and my work.
+                        </p>
                       </div>
                     </div>
                     <div className="image">
@@ -166,9 +198,9 @@ class Index extends React.Component {
             <div className="row align-items-stretch blog-container--home">
               {blogItem.map(({ node }) => {
                 return (
-                <div className="col-12 col-md-6 tiles" key={node.slug}>
-                  <BlogPreview blog={node}></BlogPreview>
-                </div>
+                  <div className="col-12 col-md-6 tiles" key={node.slug}>
+                    <BlogPreview blog={node} />
+                  </div>
                 )
               })}
             </div>
@@ -177,40 +209,46 @@ class Index extends React.Component {
 
         <div className="section">
           <div className="container">
-
             <div className="row">
               <div className="offset-md-2 col-12 col-md-8 text-center">
-                <div dangerouslySetInnerHTML={{__html:homepageSection[0].node.brandsColumn.childMarkdownRemark.html}} />
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html:
+                      homepageSection[0].node.brandsColumn.childMarkdownRemark
+                        .html,
+                  }}
+                />
               </div>
             </div>
 
             <div className="logo-container">
-            <Fade bottom cascade>
-              {logoSection[0].node.companyLogos.map((i, id) =>
-                <div className="logo-item" key={id}>
-                  {i.link !== null &&
-                  <Link to={'/project/' + i.link}>
-                    <img src={i.image.fluid.src} alt={i.link + ' logo'}/>
-                  </Link>
-                  }
-                  {i.link === null &&
-                    <img src={i.image.fluid.src} alt={i.link + ' logo'}/>
-                  }
-                </div>
-              )}
+              <Fade bottom cascade>
+                {logoSection[0].node.companyLogos.map((i, id) => (
+                  <div className="logo-item" key={id}>
+                    {i.link !== null && (
+                      <Link to={'/project/' + i.link}>
+                        <img src={i.image.fluid.src} alt={i.link + ' logo'} />
+                      </Link>
+                    )}
+                    {i.link === null && (
+                      <img src={i.image.fluid.src} alt={i.link + ' logo'} />
+                    )}
+                  </div>
+                ))}
               </Fade>
             </div>
 
             <div className="row">
               <div className="offset-md-2 col-12 col-md-8 text-center">
-                <Link className="cta" to="/project/">View all projects</Link>
+                <Link className="cta" to="/project/">
+                  View all projects
+                </Link>
               </div>
             </div>
-
           </div>
         </div>
       </div>
-    );
+    )
   }
 }
 
@@ -218,7 +256,7 @@ export default Index
 
 export const pageQuery = graphql`
   query pageQuery {
-    allContentfulBlog(sort: { fields: [updatedAt], order: DESC } limit: 4) {
+    allContentfulBlog(sort: { fields: [updatedAt], order: DESC }, limit: 2) {
       edges {
         node {
           title
@@ -255,6 +293,7 @@ export const pageQuery = graphql`
         node {
           title
           company
+          category
           slug
           id
           leadin {

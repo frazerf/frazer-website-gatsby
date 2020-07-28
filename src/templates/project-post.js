@@ -13,6 +13,7 @@ const ProjectPost = ({ pageContext, data }) => {
     heroVideo,
     blocks,
     title,
+    category,
   } = data.contentfulProject
   const { next, prev } = pageContext
 
@@ -40,7 +41,7 @@ const ProjectPost = ({ pageContext, data }) => {
           <div className="container">
             <div className="row">
               <div className="col-12">
-                <div className="title">Case Study</div>
+                <div className="title">{category}</div>
                 <h1 className="large">{title}</h1>
               </div>
             </div>
@@ -92,6 +93,7 @@ export const pageQuery = graphql`
     contentfulProject(slug: {eq: $slug}) {
       id
       title
+      category
       slug
       company
       createdAt(formatString: "Do MMMM YYYY")

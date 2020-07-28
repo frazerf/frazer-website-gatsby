@@ -10,7 +10,7 @@ export default ({ project }) => (
             </div>
             <div className="content">
                 <div className="title">{project.title}</div>
-                <h4 className="gray-300">Case Study</h4>
+                <h4 className="gray-300">{project.category}</h4>
             </div>
         </Link> 
     </>
