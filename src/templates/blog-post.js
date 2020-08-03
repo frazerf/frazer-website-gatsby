@@ -80,7 +80,7 @@ const BlogPost = ({ pageContext, data }) => {
       {next ? (
         <div className="section-next">
           <div className="container-large">
-            <Link to={'../blog/' + next.slug} className="nextprevfooter">
+            <Link to={'../../blog/' + next.slug} className="nextprevfooter">
               <div className="content t-light">
                 <h4>Next Article</h4>
                 <h3>{next.title}</h3>
@@ -92,7 +92,7 @@ const BlogPost = ({ pageContext, data }) => {
       ) : (
         <div className="section-next">
           <div className="container-large">
-            <Link to={'../blog/' + prev.slug} className="nextprevfooter">
+            <Link to={'../../blog/' + prev.slug} className="nextprevfooter">
               <div className="content t-light">
                 <h4>Previous Article</h4>
                 <h3>{prev.title}</h3>
