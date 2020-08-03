@@ -1,13 +1,12 @@
-import React from 'react';
+import React from 'react'
 import { graphql } from 'gatsby'
-import Proptypes from 'prop-types';
+import Proptypes from 'prop-types'
 import Img from 'gatsby-image'
 import Helmet from 'react-helmet'
 import ContentModules from '../content-modules'
 import Link from 'gatsby-link'
 
 const ProjectPost = ({ pageContext, data }) => {
-
   const {
     heroImage,
     heroVideo,
@@ -31,12 +30,19 @@ const ProjectPost = ({ pageContext, data }) => {
         )}
         {heroVideo !== null && (
           <div className="media">
-            <video autoPlay={true} loop={true} playsInline={true} muted={true} controls={false} poster={heroImage.file.url}>
+            <video
+              autoPlay={true}
+              loop={true}
+              playsInline={true}
+              muted={true}
+              controls={false}
+              poster={heroImage.file.url}
+            >
               <source src={heroVideo.file.url} type="video/mp4" />
             </video>
           </div>
         )}
-        <div className="overlay"></div>
+        <div className="overlay" />
         <div className="content t-light">
           <div className="container">
             <div className="row">
@@ -46,17 +52,15 @@ const ProjectPost = ({ pageContext, data }) => {
               </div>
             </div>
           </div>
-          <div className="icon-scroll"></div>
+          <div className="icon-scroll" />
         </div>
       </div>
-      <div>
-        {blocks && <ContentModules blocks={blocks} />}
-      </div>
+      <div>{blocks && <ContentModules blocks={blocks} />}</div>
 
-      {next 
-        ? <div className="section-next">
+      {next ? (
+        <div className="section-next">
           <div className="container-large">
-            <Link to={"project/" + next.slug} className="nextprevfooter">
+            <Link to={'project/' + next.slug} className="nextprevfooter">
               <div className="content t-light">
                 <h4>Next Project</h4>
                 <h2>{next.title}</h2>
@@ -65,10 +69,10 @@ const ProjectPost = ({ pageContext, data }) => {
             </Link>
           </div>
         </div>
-        
-        : <div className="section-next">
+      ) : (
+        <div className="section-next">
           <div className="container-large">
-            <Link to={"project/" + prev.slug} className="nextprevfooter">
+            <Link to={'project/' + prev.slug} className="nextprevfooter">
               <div className="content t-light">
                 <h4>Back to previous Project?</h4>
                 <h2>{prev.title}</h2>
@@ -77,20 +81,20 @@ const ProjectPost = ({ pageContext, data }) => {
             </Link>
           </div>
         </div>
-      }
+      )}
     </div>
   )
 }
 
 ProjectPost.proptypes = {
-  data: Proptypes.object.isRequired
+  data: Proptypes.object.isRequired,
 }
 
-export default ProjectPost;
+export default ProjectPost
 
 export const pageQuery = graphql`
   query projectPostQuery($slug: String!) {
-    contentfulProject(slug: {eq: $slug}) {
+    contentfulProject(slug: { eq: $slug }) {
       id
       title
       category
@@ -245,7 +249,7 @@ export const pageQuery = graphql`
             caption
           }
           ... on ContentfulBlockColourCarousel {
-            backgroundColour            
+            backgroundColour
             imagesColour {
               id
               sizes(quality: 100, maxHeight: 600) {

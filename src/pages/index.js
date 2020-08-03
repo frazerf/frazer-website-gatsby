@@ -105,7 +105,7 @@ class Index extends React.Component {
                   <Link to={'/project/' + projectItem[0].node.slug}>
                     <div className="row">
                       <div className="col-12 offset-md-1 col-md-10">
-                        <h5>Case Study</h5>
+                        <h5>{projectItem[0].node.category}</h5>
                         <h1>{projectItem[0].node.title}</h1>
                       </div>
                     </div>
@@ -164,16 +164,15 @@ class Index extends React.Component {
                   <div className="eeeeep">
                     <div className="content">
                       <div className="next">
-                        <div className="title gray-500">About yours truly</div>
+                        <div className="title gray-500">About me</div>
                         <h3>
-                          Just your typical, idea conjuring, outside-the-box
-                          thinking, Notorious B.I.G listening, boy from NZ.
+                          Your typical, idea conjuring, outside-the-box
+                          thinking, Notorious B.I.G listening, dev from the Bay.
                         </h3>
                         <p>
-                          Welcome to your one-stop-shop for everything Frazer
-                          Findlater related. I don't take myself too seriously
-                          and that's goes for my site as well. So come in and
-                          take a glimpse at my life and my work.
+                          Hi there and welcome to my website. Here you'll sneak
+                          a glimpse in to my life, my work and side projects.
+                          Feel free to drop a message and get in touch!
                         </p>
                       </div>
                     </div>

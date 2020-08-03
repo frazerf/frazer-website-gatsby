@@ -71,7 +71,7 @@ const BlogPost = ({ pageContext, data }) => {
       </Reveal>
       {blocks && <ContentModules blocks={blocks} />}
 
-      <div class="three-dots">
+      <div className="three-dots">
         <span />
         <span />
         <span />
