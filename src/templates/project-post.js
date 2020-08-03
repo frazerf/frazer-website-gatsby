@@ -60,7 +60,7 @@ const ProjectPost = ({ pageContext, data }) => {
       {next ? (
         <div className="section-next">
           <div className="container-large">
-            <Link to={'/project/' + next.slug} className="nextprevfooter">
+            <Link to={next.slug} className="nextprevfooter">
               <div className="content t-light">
                 <h4>Next Project</h4>
                 <h2>{next.title}</h2>
@@ -72,7 +72,7 @@ const ProjectPost = ({ pageContext, data }) => {
       ) : (
         <div className="section-next">
           <div className="container-large">
-            <Link to={'/project/' + prev.slug} className="nextprevfooter">
+            <Link to={prev.slug} className="nextprevfooter">
               <div className="content t-light">
                 <h4>Back to previous Project?</h4>
                 <h2>{prev.title}</h2>
