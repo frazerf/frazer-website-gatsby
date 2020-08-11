@@ -1,115 +1,123 @@
 html {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-    font-family: $primary-font-light;
+  font-family: $primary-font-light;
 }
 
-::-moz-selection { /* Code for Firefox */
-    color: $white;
-    background: $gray-900;
+::-moz-selection {
+  /* Code for Firefox */
+  color: $white;
+  background: $gray-900;
 }
 
 ::selection {
-    color: $white;
-    background: $gray-900;
+  color: $white;
+  background: $gray-900;
 }
 
 .container {
+  max-width: 90%;
+  @include media-breakpoint-up(md) {
+    max-width: 80%;
+  }
+  &--large {
+    margin: 0 rem(20px);
+  }
+  &-main {
+    max-width: 90%;
+    margin: 0 auto;
+    @include media-breakpoint-up(md) {
+      max-width: 75%;
+    }
+    @include media-breakpoint-up(lg) {
+      max-width: 50%;
+    }
+  }
+  &-large {
+    max-width: 90%;
+    margin: 0 auto;
+    @include media-breakpoint-up(md) {
+      max-width: 75%;
+    }
+  }
+
+  .small-container & {
     max-width: 90%;
     @include media-breakpoint-up(md) {
-        max-width: 80%;
+      max-width: 66%;
     }
-    &--large {
-        margin: 0 rem(20px);
-    }
-    &-main {
-        max-width: 90%;
-        margin: 0 auto;
-        @include media-breakpoint-up(md) {
-            max-width: 75%;
-        }
-        @include media-breakpoint-up(lg) {
-            max-width: 50%;
-        }
-    }
-    &-large {
-        max-width: 90%;
-        margin: 0 auto;
-        @include media-breakpoint-up(md) {
-            max-width: 75%;
-        }
-    }
-
-    .small-container & {
-        max-width: 90%;
-        @include media-breakpoint-up(md) {
-            max-width: 66%;
-        }
-    }
+  }
 }
 
 .spacer {
-    padding-bottom: rem(60px);
+  padding-bottom: rem(60px);
+  @include media-breakpoint-up(md) {
+    padding-bottom: rem(160px);
+  }
+  &:nth-child(1) {
+    padding-top: rem(60px);
     @include media-breakpoint-up(md) {
-        padding-bottom: rem(160px);
+      padding-top: rem(160px);
     }
-    &:nth-child(1) {
-        padding-top: rem(60px);
-        @include media-breakpoint-up(md) {
-            padding-top: rem(160px);
-        }
-    }
+  }
 }
 
 .outer-container {
-    background: white;
-    min-height: 100vh;
+  background: white;
+  min-height: 100vh;
 }
 
 .main-content {
-    width: 100%;
-    padding-left: 0;
-    min-height: 100vh;
-    background: white;
+  width: 100%;
+  padding-left: 0;
+  min-height: 100vh;
+  background: white;
 }
 
 .section {
+  padding-top: rem(60px);
+  padding-bottom: rem(60px);
+  @include media-breakpoint-up(md) {
+    padding-top: rem(140px);
+    padding-bottom: rem(140px);
+  }
+  &.light-grey {
+    background: #fafafa;
+  }
+  &.small-top {
+    padding-top: rem(70px);
+  }
+  &.hero-section {
+    padding-top: rem(240px);
+    padding-bottom: rem(30px);
+  }
+  &.mob-spacer-top {
+    @include media-breakpoint-down(sm) {
+      padding-top: rem(140px);
+    }
+  }
+  &-next {
     padding-top: rem(60px);
     padding-bottom: rem(60px);
     @include media-breakpoint-up(md) {
-        padding-top: rem(140px);
-        padding-bottom: rem(140px);
+      padding-top: rem(100px);
+      padding-bottom: rem(160px);
     }
-    &.light-grey {
-        background: #fafafa;
+  }
+  &.article-carousel {
+    padding-bottom: rem(140px);
+    @include media-breakpoint-up(md) {
+      padding-bottom: rem(250px);
     }
-    &.small-top {
-        padding-top: rem(70px);
-    }
-    &.hero-section {
-        padding-top: rem(240px);
-        padding-bottom: rem(30px);
-    }
-    &.mob-spacer-top {
-        @include media-breakpoint-down(sm) {
-            padding-top: rem(140px);
-        }
-    }
-    &-next {
-        padding-top: rem(60px);
-        padding-bottom: rem(60px);
-        @include media-breakpoint-up(md) {
-            padding-top: rem(100px);
-            padding-bottom: rem(160px);
-        }
-    }
-    &.article-carousel {
-        padding-bottom: rem(140px);
-        @include media-breakpoint-up(md) {
-            padding-bottom: rem(250px);
-        }
-    }
+  }
+}
+
+iframe {
+  margin: 20px 0;
+  @include media-breakpoint-up(md) {
+    margin: 40px 0;
+  }
 }
