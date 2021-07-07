@@ -23,7 +23,7 @@ const BlogPost = ({ pageContext, data }) => {
     <div className="animated fadeIn">
       <Helmet>
         <body className="dark-header small-container blog-page" />
-        <title>{title} | 🍕 Frazer Findlater</title>
+        <title>s</title>
       </Helmet>
       <div className="hero headline">
         <div className="content">
@@ -106,7 +106,7 @@ const BlogPost = ({ pageContext, data }) => {
   )
 }
 
-BlogPost.proptypes = {
+BlogPost.propTypes = {
   data: Proptypes.object.isRequired,
 }
 

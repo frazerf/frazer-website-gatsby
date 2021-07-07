@@ -86,7 +86,7 @@ const ProjectPost = ({ pageContext, data }) => {
   )
 }
 
-ProjectPost.proptypes = {
+ProjectPost.propTypes = {
   data: Proptypes.object.isRequired,
 }
 
