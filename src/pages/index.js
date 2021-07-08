@@ -8,7 +8,7 @@ import Fade from 'react-reveal/Fade'
 import BlogPreview from '../components/blog-preview'
 import Helmet from 'react-helmet'
 
-import Portrait from '../images/portrait.jpg'
+import Portrait from '../images/port.jpg'
 
 /*eslint-disable */
 const fade =
