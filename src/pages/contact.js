@@ -22,6 +22,7 @@ const Contact = () => (
         <div className="row align-items-stretch">
           <div className="col-md-9 col-12">
             <form className="contact" name="contact" method="POST" data-netlify="true">
+              <input type="hidden" name="form-name" value="contact"/>
               <input placeholder="Full Name" id="name" type="text" name="name" />
               <input placeholder="Email Address" id="email" type="email" name="email" />
               <input placeholder="Favourite dog breed" id="dog" type="text" name="dog" /> 
